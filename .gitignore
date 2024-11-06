@@ -15,3 +15,4 @@ examples-temp
 node_modules
 .env
 todo.md
+/notes
