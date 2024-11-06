@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { sidebar, socialLinks, outline } from './src/config/'
+import { sidebar, socialLinks, outline, nav } from './src/config/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,8 +9,7 @@ export default defineConfig({
   appearance: 'force-dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [{ text: "Apoie o Projeto", link: "/" }],
-    
+    nav,
     sidebar,
     socialLinks,
     outline,

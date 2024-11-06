@@ -1,47 +1,22 @@
-import { firstStepsLinks, archtectureConceptsLinks } from "./links"
+import {
+  firstStepsLinks,
+  archtectureConceptsLinks,
+  theBasicsLinks,
+  diggingDeeperLinks,
+  securityLinks,
+  databaseLinks,
+  eloquentOrmLinks,
+  testingLinks,
+  packagesLinks
+} from "./links";
 export const sidebar = [
   firstStepsLinks,
   archtectureConceptsLinks,
-  {
-    text: "Os fundamentos",
-    items: [
-
-    ],
-    collapsed: true,
-  },
-  {
-    text: "Explorando Mais a Fundo",
-    items: [],
-    collapsed: true,
-  },
-  {
-    text: "Segurança",
-    items: [],
-    collapsed: true,
-  },
-  {
-    text: "Banco de Dados",
-    items: [],
-    collapsed: true,
-  },
-  {
-    text: "Eloquent ORM",
-    items: [],
-    collapsed: true,
-  },
-  {
-    text: "Testes",
-    items: [],
-    collapsed: true,
-  },
-  {
-    text: "Pacotes",
-    items: [],
-    collapsed: true,
-  },
-  {
-    text: "Pacotes",
-    items: [],
-    collapsed: true,
-  },
-]
+  theBasicsLinks,
+  diggingDeeperLinks,
+  securityLinks,
+  databaseLinks,
+  eloquentOrmLinks,
+  testingLinks,
+  packagesLinks,
+];
