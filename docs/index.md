@@ -4,21 +4,17 @@ layout: home
 
 hero:
   name: Laravel Brasil
-  tagline: A documentação em português do Laravel.
+  tagline: A documentação em português do melhor framework Web.
   actions:
     - theme: brand
       text: Instalação
       link: /primeiros-passos/instalacao
 
     - theme: alt
-      text: Starter Kits
-      link: /starter-kits
-
-    - theme: alt
-      text: Contribua
+      text: Contribua com a tradução
       link: /
   image:
-    src: /logo.jpg
+    src: /logo_min.webp
     alt: Laravel Brasil
 
 features:
@@ -38,7 +34,5 @@ features:
 <style>
 .VPImage[alt="Laravel Brasil"] {
     border-radius: 12px;
-    margin: 20px; /* Set your desired margin */
-    box-shadow: 5px 5px 20px rgb(45 114 253); /* Adjust the shadow color and blur radius as needed */
 }
 </style>

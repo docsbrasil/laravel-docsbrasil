@@ -1,5 +1,5 @@
 - [] Adicionar estilos aos links na home
-- [] Criar uma aba de canais em portugues
+- [] Criar uma aba de canais (youtube) em portugues
 
 # Instalação (Page)
 ## adicionar os links para
