@@ -27,4 +27,8 @@ export const firstStepsLinks = {
     }
   ],
   collapsed: true,
+  docFooterText:  {
+    prev: 'Previous',
+    next: 'Next',
+  }
 };
