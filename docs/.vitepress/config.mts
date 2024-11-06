@@ -7,7 +7,9 @@ export default defineConfig({
   description: "A laravel pt_BR docs",
   cleanUrls: true,
   appearance: "force-dark",
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: [
+    /\/localhost\//,
+  ],
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
