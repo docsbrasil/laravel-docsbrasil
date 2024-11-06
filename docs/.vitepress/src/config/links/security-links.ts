@@ -1,5 +1,5 @@
 export const securityLinks = {
-    text: "Segurança",
+    text: "Segurança (WIP)",
     items: [
         {
             text: "Autenticação",

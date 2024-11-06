@@ -1,5 +1,5 @@
 export const packagesLinks = {
-  text: "Pacotes",
+  text: "Pacotes (WIP)",
   items: [
     {
       text: "Breeze",

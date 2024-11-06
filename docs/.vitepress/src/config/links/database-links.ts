@@ -1,17 +1,5 @@
-/**
- * 
-    Getting Started
-    Query Builder
-    Pagination
-    Migrations
-    Seeding
-    Redis
-    MongoDB
-
- */
-
 export const databaseLinks = {
-  text: "Banco de Dados",
+  text: "Banco de Dados (WIP)",
   items: [
     {
       text: "Introdução",

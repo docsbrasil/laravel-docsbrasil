@@ -1,5 +1,5 @@
 export const theBasicsLinks = {
-  text: "Os fundamentos",
+  text: "Os fundamentos (WIP)",
   items: [
     {
       text: "Rotas",

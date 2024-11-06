@@ -1,5 +1,5 @@
 export const eloquentOrmLinks = {
-  text: "Eloquent ORM",
+  text: "Eloquent ORM (WIP)",
   items: [
     {
       text: "Introdução",

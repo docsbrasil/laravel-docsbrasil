@@ -1,30 +1,5 @@
-/**
- * 
-    Artisan Console
-    Broadcasting
-    Cache
-    Collections
-    Concurrency
-    Context
-    Contracts
-    Events
-    File Storage
-    Helpers
-    HTTP Client
-    Localization
-    Mail
-    Notifications
-    Package Development
-    Processes
-    Queues
-    Rate Limiting
-    Strings
-    Task Scheduling
-
- */
-
 export const diggingDeeperLinks = {
-  text: "Explorando Mais a Fundo",
+  text: "Explorando Mais a Fundo (WIP)",
   items: [
     {
       text: "Console Artisan",
