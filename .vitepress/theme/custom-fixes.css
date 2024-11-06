@@ -1,0 +1,14 @@
+#VPContent > div > div.VPHero.has-image.VPHomeHero > div > div.image > div > img {
+    margin-left: 0;
+    margin-bottom: 12rem;
+}
+
+
+#VPContent > div > div.VPHero.has-image.VPHomeHero > div > div.main {
+    margin-top: 30px;
+}
+
+#VPContent > div > div.VPHero.has-image.VPHomeHero > div > div.main > p.text {
+    max-width: 12ch;
+    padding-top: 12px;
+}
