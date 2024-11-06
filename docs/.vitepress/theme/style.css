@@ -49,7 +49,7 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-1: #eb4432;
   --vp-c-brand-2: var(--vp-c-indigo-2);
   --vp-c-brand-3: var(--vp-c-indigo-3);
   --vp-c-brand-soft: var(--vp-c-indigo-soft);
@@ -68,6 +68,9 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+  --vp-sidebar-bg-color: #151720;
+  --vp-docs-bg-color: #171923;
+  --vp-nav-bg-color: #171923;
 }
 
 /**
@@ -137,3 +140,22 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+#VPSidebarNav .group {
+  border-top: none !important;
+}
+
+#VPContent {
+  background-color: var(--vp-docs-bg-color) !important;
+}
+
+.highlight {
+  text-decoration: underline var(--vp-c-brand-1);
+}
+
+.code-highlight {
+  color: var(--vp-c-brand-1);
+  background-color: #232832;
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  margin: 0 0.2em;
+}
