@@ -1,5 +1,5 @@
 export const archtectureConceptsLinks = {
-  text: "Conceitos de arquitetura (WIP)",
+  text: "Conceitos de arquitetura",
   items: [
     {
       text: "Ciclo de vida da Requisição",
