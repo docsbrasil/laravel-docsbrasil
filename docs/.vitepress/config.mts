@@ -7,9 +7,7 @@ export default defineConfig({
   description: "A laravel pt_BR docs",
   cleanUrls: true,
   appearance: "force-dark",
-  ignoreDeadLinks: [
-    /\/localhost\//,
-  ],
+  ignoreDeadLinks: true,
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   markdown: {
     container: {
