@@ -39,7 +39,7 @@ export const theBasicsLinks = {
     },
     {
       text: "Geração de URLs",
-      link: "/fundamentos/generacao-de-urls",
+      link: "/fundamentos/geracao-de-urls",
     },
     {
       text: "Sessões",
