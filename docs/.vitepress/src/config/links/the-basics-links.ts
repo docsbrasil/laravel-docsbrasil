@@ -31,23 +31,23 @@ export const theBasicsLinks = {
     },
     {
       text: "Templates Blade",
-      link: "/fundamentos/blade-templates",
+      link: "/fundamentos/templates-blade",
     },
     {
       text: "Compilação de Assets (Vite)",
-      link: "/fundamentos/asset-bundling",
+      link: "/fundamentos/compilacao-de-assets",
     },
     {
       text: "Geração de URLs",
-      link: "/fundamentos/url-generation",
+      link: "/fundamentos/generacao-de-urls",
     },
     {
       text: "Sessões",
-      link: "/fundamentos/session",
+      link: "/fundamentos/sessoes",
     },
     {
       text: "Validação",
-      link: "/fundamentos/validation",
+      link: "/fundamentos/validacao",
     },
     {
       text: "Tratamento de Erros",

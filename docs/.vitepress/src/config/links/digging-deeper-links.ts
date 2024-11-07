@@ -51,7 +51,7 @@ export const diggingDeeperLinks = {
     },
     {
       text: "Emails",
-      link: "/explorando-mais-a-fundo/mail",
+      link: "/explorando-mais-a-fundo/emails",
     },
     {
       text: "Notificações",
