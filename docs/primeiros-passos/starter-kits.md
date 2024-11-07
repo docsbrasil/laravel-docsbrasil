@@ -1,7 +1,3 @@
-<script setup>
-import Info from '../components/Info.vue';
-</script>
-
 # Starter Kits
 
 ## Introdução
@@ -58,9 +54,9 @@ npm run dev
 
 Em seguida, você pode navegar para as URLs `/login` ou `/register` de sua aplicação em seu navegador. Todas as rotas do Breeze são definidas no arquivo `routes/auth.php`.
 
-<Info>
+::: tip
 Para saber mais sobre a compilação do CSS e JavaScript de sua aplicação, confira a <a href="/fundamentos/vite#rodando-o-vite">documentação do Vite</a> do Laravel.
-</Info>
+:::
 
 ### Breeze e Livewire
 

@@ -1,8 +1,3 @@
-<script setup>
-import Info from '../components/Info.vue';
-import Code from '../components/Code.vue';
-</script>
-
 # Frontend
 
 ## Introdução
@@ -175,6 +170,6 @@ Por padrão, o Laravel utiliza o <a href="https://vitejs.dev">Vite</a> para comp
 
 A maneira mais rápida de começar com Laravel e Vite é começar o desenvolvimento de sua aplicação usando o <a href="/primeiros-passos/starter-kits">Laravel Breeze</a>, nosso starter kit mais simples que inicia sua aplicação fornecendo autenticação frontend e backend.
 
-<Info>
+::: tip
 Para obter documentação mais detalhada sobre como utilizar o Vite com Laravel, consulte nossa <a href="/fundamentos/compilacao-de-assets">documentação dedicada sobre a compilação e compilação de seus ativos</a>.
-</Info>
+:::

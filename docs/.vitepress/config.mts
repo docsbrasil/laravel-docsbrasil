@@ -11,6 +11,15 @@ export default defineConfig({
     /\/localhost\//,
   ],
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  markdown: {
+    container: {
+      tipLabel: 'Dica',
+      warningLabel: 'Aviso',
+      dangerLabel: 'Atenção',
+      infoLabel: 'Informação',
+      detailsLabel: 'Detalhes',
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav,

@@ -1,17 +1,12 @@
-<script setup>
-import Info from '../components/Info.vue';
-import Code from '../components/Code.vue';
-</script>
-
 # Estrutura de diretórios
 
 ## Introdução
 
 A estrutura padrão da aplicação Laravel é projetada para fornecer um ótimo ponto de partida tanto para aplicações grandes quanto pequenas. No entanto, você está livre para organizar sua aplicação da maneira que preferir. O Laravel impõe quase nenhuma restrição sobre onde qualquer classe pode estar localizada desde que o Composer consiga carregar automaticamente a classe.
 
-<Info> 
+::: tip Novo no Laravel?
 Novo no Laravel? Confira o <a href="https://bootcamp.laravel.com" target="_blank">Laravel Bootcamp</a> para um tour prático pelo framework, onde o ajudaremos a criar sua primeira aplicação Laravel. 
-</Info>
+:::
 
 ## Diretório raiz (root)
 
@@ -75,9 +70,9 @@ Por padrão, o diretório `app` contém os diretórios `Http`, `Models` e `Provi
 
 Tanto os diretórios `Console` quanto `Http` são explicados mais detalhadamente em suas respectivas seções abaixo, mas pense nos diretórios `Console` e `Http` como fornecendo uma API para o núcleo da sua aplicação. O protocolo HTTP e a CLI são ambos mecanismos para interagir com a sua aplicação, mas não contêm logicamente a aplicação. Em outras palavras, eles são duas maneiras de emitir comandos para a sua aplicação. O diretório `Console` contém todos os seus comandos Artisan, enquanto o diretório `Http` contém seus controllers, middleware e requests.
 
-<Info>
-Muitas das classes no diretório <Code>app</Code> podem ser geradas pelo Artisan via comandos. Para revisar os comandos disponíveis, execute o comando <Code>php artisan list make</Code> no seu terminal.
-</Info>
+::: tip
+Muitas das classes no diretório `app` podem ser geradas pelo Artisan via comandos. Para revisar os comandos disponíveis, execute o comando `php artisan list make` no seu terminal.
+:::
 
 ### O Diretório `Broadcasting`
 

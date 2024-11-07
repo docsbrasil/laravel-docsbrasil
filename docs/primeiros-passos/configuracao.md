@@ -1,5 +1,4 @@
 <script setup>
-import Info from '../components/Info.vue'
 import Code from '../components/Code.vue'
 </script>
 
@@ -41,9 +40,9 @@ O arquivo `.env` padrão do Laravel contém alguns valores de configuração com
 
 Se você está desenvolvendo com uma equipe, pode continuar incluindo e atualizando o arquivo `.env.example` com seu aplicativo. Ao colocar valores de espaço reservado no arquivo de configuração de exemplo, outros desenvolvedores de sua equipe podem ver claramente quais variáveis de ambiente são necessárias para executar seu aplicativo.
 
-<Info>
-Qualquer variável em seu arquivo <Code>.env</Code> pode ser substituída por variáveis de ambiente externas, como variáveis de ambiente em nível de servidor ou sistema.
-</Info>
+::: tip
+Qualquer variável em seu arquivo `.env` pode ser substituída por variáveis de ambiente externas, como variáveis de ambiente em nível de servidor ou sistema.
+:::
 
 #### Segurança do Arquivo de Ambiente
 
@@ -146,9 +145,9 @@ if (App::environment(['local', 'staging'])) {
 }
 ```
 
-<Info>
+::: tip
  A detecção do ambiente atual da aplicação pode ser substituída definindo uma variável de ambiente `APP_ENV` em nível de servidor.
-</Info>
+:::
 
 ### Criptografando Arquivos de Ambiente
 
@@ -168,9 +167,9 @@ Executar o comando `env:encrypt` criptografará seu arquivo `.env` e colocará o
 php artisan env:encrypt --key=3UVsEgGVK36XN82KKeyLFMhvosbZN1aF
 ```
 
-<Info>
-A chave fornecida deve corresponder ao comprimento da chave necessária pelo cifrador de criptografia usado. Por padrão, o Laravel usará o cifrador <Code>AES-256-CBC</Code>, que requer uma chave de 32 caracteres. Você é livre para usar qualquer cifrador suportado pelo <a href="/seguranca/criptografia">criptografador</a> do Laravel passando a opção <Code>--cipher</Code> ao chamar o comando.
-</Info>
+::: tip
+A chave fornecida deve corresponder ao comprimento da chave necessária pelo cifrador de criptografia usado. Por padrão, o Laravel usará o cifrador `AES-256-CBC`, que requer uma chave de 32 caracteres. Você é livre para usar qualquer cifrador suportado pelo <a href="/seguranca/criptografia">criptografador</a> do Laravel passando a opção `--cipher` ao chamar o comando.
+:::
 
 Se a sua aplicação tiver vários arquivos de ambiente, como `.env` e `.env.staging`, você pode especificar o arquivo de ambiente que deve ser criptografado fornecendo o nome do ambiente via a opção `--env`:
 
@@ -261,9 +260,9 @@ O comando `config:clear` pode ser usado para limpar a configuração armazenada 
 php artisan config:clear
 ```
 
-<Info>
-Se você executar o comando <Code>config:cache</Code> durante o seu processo de deploy, você deve garantir que está chamando a função <Code>env</Code> apenas de dentro de seus arquivos de configuração. Depois que a configuração for armazenada em cache, o arquivo <Code>.env</Code> não será carregado; portanto, a função <Code>env</Code> retornará apenas variáveis de ambiente externas de nível de sistema.
-</Info>
+::: tip
+Se você executar o comando `config:cache` durante o seu processo de deploy, você deve garantir que está chamando a função `env` apenas de dentro de seus arquivos de configuração. Depois que a configuração for armazenada em cache, o arquivo `.env` não será carregado; portanto, a função `env` retornará apenas variáveis de ambiente externas de nível de sistema.
+:::
 
 ## Publicando Configurações
 
@@ -281,9 +280,9 @@ php artisan config:publish --all
 
 A opção `debug` em seu arquivo de configuração `config/app.php` determina quanto de informação sobre um erro é realmente exibida ao usuário. Por padrão, essa opção é definida para respeitar o valor da variável de ambiente `APP_DEBUG`, que é armazenada em seu arquivo `.env`.
 
-<Info>
-Para desenvolvimento local, você deve definir a variável de ambiente <Code>APP_DEBUG</Code> como <Code>true</Code>. <strong>Em seu ambiente de produção, esse valor deve sempre ser <Code>false</Code>. Se a variável for definida como <Code>true</Code> em produção, você corre o risco de expor valores de configuração sensíveis aos usuários finais de sua aplicação.</strong>
-</Info>
+::: tip
+Para desenvolvimento local, você deve definir a variável de ambiente `APP_DEBUG` como `true`. <strong>Em seu ambiente de produção, esse valor deve sempre ser `false`. Se a variável for definida como `true` em produção, você corre o risco de expor valores de configuração sensíveis aos usuários finais de sua aplicação.</strong>
+:::
 
 ## Modo de Manutenção
 
@@ -329,9 +328,9 @@ php artisan down --with-secret
 
 Ao acessar esta rota oculta, você será redirecionado para a rota `/` da aplicação. Depois que o cookie for emitido para o seu navegador, você poderá navegar pela aplicação normalmente, como se ela não estivesse em modo de manutenção.
 
-<Info> 
+::: tip
 Seu token secreto para o modo de manutenção deve, normalmente, consistir em caracteres alfanuméricos e, opcionalmente, traços. Evite utilizar caracteres com significado especial em URLs, como `?` ou `&amp;`. 
-</Info>
+:::
 
 #### Modo de Manutenção em Múltiplos Servidores
 
@@ -372,9 +371,9 @@ Para desabilitar o modo de manutenção, utilize o comando `up`:
 php artisan up
 ```
 
-<Info>
-Você pode personalizar o template padrão do modo de manutenção definindo seu próprio template em <code>resources/views/errors/503.blade.php</code>.
-</Info>
+::: tip
+Você pode personalizar o template padrão do modo de manutenção definindo seu próprio template em `resources/views/errors/503.blade.php`.
+:::
 
 #### Modo de Manutenção e Filas
 
