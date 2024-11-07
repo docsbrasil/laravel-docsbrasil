@@ -47,21 +47,22 @@ Antes de criar sua primeira aplicação Laravel, certifique-se de que sua máqui
 
 Se você não tiver o PHP e o Composer instalados em sua máquina local, os seguintes comandos instalarão o PHP, o Composer e o instalador Laravel no macOS, Windows ou Linux:
 
-```bash
-# Instalando o PHP no macOS
+::: code-group
+
+```shell [macOs]
 /bin/bash -c "$(curl -fsSL https://php.new/install/mac)"
+
 ```
 
-```bash
-# Instalando o PHP no Windows (PowerShell)
+```shell [Windows (PowerShell)]
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows'))
 ```
 
-```bash
-# Instalando o PHP no Linux
+```shell [Linux]
 /bin/bash -c "$(curl -fsSL https://php.new/install/linux)"
-
 ```
+
+:::
 
 Após executar um dos comandos acima, <span class="highlight">você deve reiniciar sua sessão no terminal</span>. Para atualizar o PHP, Composer e o instalador Laravel após instalá-los via <a href="https://php.new/" target="_blank">php.new</a>, você pode executar o comando novamente no terminal.
 
