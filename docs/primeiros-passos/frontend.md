@@ -15,7 +15,7 @@ Existem duas maneiras principais de abordar o desenvolvimento de frontend ao con
 
 ### PHP e Blade
 
-No passado, a maioria das aplicações PHP renderizava HTML para o navegador usando modelos HTML simples intercalados com declarações PHP <code>echo</code> que renderizavam dados que foram recuperados de um banco de dados durante a solicitação:
+No passado, a maioria das aplicações PHP renderizava HTML para o navegador usando modelos HTML simples intercalados com declarações PHP `echo` que renderizavam dados que foram recuperados de um banco de dados durante a solicitação:
 
 ```php
 <div>
@@ -82,7 +82,7 @@ E, o template correspondente para o contador seria escrito da seguinte forma:
 </div>
 ```
 
-Como você pode ver, Livewire permite que você escreva novos atributos HTML, como <code>wire:click</code>, que conectam o frontend e o backend de sua aplicação Laravel. Além disso, você pode renderizar o estado atual de seu componente usando expressões Blade simples.
+Como você pode ver, Livewire permite que você escreva novos atributos HTML, como `wire:click`, que conectam o frontend e o backend de sua aplicação Laravel. Além disso, você pode renderizar o estado atual de seu componente usando expressões Blade simples.
 
 Para muitos, Livewire revolucionou o desenvolvimento de frontend com Laravel, permitindo que eles permaneçam dentro do conforto do Laravel enquanto constroem aplicações web modernas e dinâmicas. Tipicamente, desenvolvedores que usam Livewire também utilizarão <a href="https://alpinejs.dev/">Alpine.js</a> para adicionar JavaScript em seu frontend apenas onde é necessário, como para renderizar um modal.
 
@@ -130,7 +130,7 @@ class UserController extends Controller
 }
 ```
 
-Uma página Inertia corresponde a um componente Vue ou React, normalmente armazenado no diretório <code>resources/js/Pages</code> de sua aplicação. Os dados fornecidos à página via método <code>Inertia::render</code> serão usados para hidratar as "props" do componente da página:
+Uma página Inertia corresponde a um componente Vue ou React, normalmente armazenado no diretório `resources/js/Pages` de sua aplicação. Os dados fornecidos à página via método `Inertia::render` serão usados para hidratar as "props" do componente da página:
 
 ```vue
 <script setup>
@@ -173,7 +173,7 @@ Se você deseja construir seu frontend usando Inertia e Vue / React, você pode 
 
 Independentemente de você escolher desenvolver seu frontend usando Blade e Livewire ou Vue / React e Inertia, você provavelmente precisará compilar o CSS de sua aplicação em ativos prontos para produção. Claro, se você optar por construir o frontend de sua aplicação com Vue ou React, você também precisará compilar seus componentes em ativos JavaScript prontos para o navegador.
 
-Por padrão, o Laravel utiliza o <a href="https://vitejs.dev">Vite</a> para compilar seus ativos. O Vite fornece tempos de compilação ultrarrápidos e substituição de módulo quase instantânea (HMR) durante o desenvolvimento local. Em todas as novas aplicações Laravel, incluindo aquelas que usam nossos <a href="/primeiros-passos/starter-kits">starter kits</a>, você encontrará um arquivo <code>vite.config.js</code> que carrega nosso plugin Laravel Vite que torna o Vite uma alegria de usar com aplicações Laravel.
+Por padrão, o Laravel utiliza o <a href="https://vitejs.dev">Vite</a> para compilar seus ativos. O Vite fornece tempos de compilação ultrarrápidos e substituição de módulo quase instantânea (HMR) durante o desenvolvimento local. Em todas as novas aplicações Laravel, incluindo aquelas que usam nossos <a href="/primeiros-passos/starter-kits">starter kits</a>, você encontrará um arquivo `vite.config.js` que carrega nosso plugin Laravel Vite que torna o Vite uma alegria de usar com aplicações Laravel.
 
 A maneira mais rápida de começar com Laravel e Vite é começar o desenvolvimento de sua aplicação usando o <a href="/primeiros-passos/starter-kits">Laravel Breeze</a>, nosso starter kit mais simples que inicia sua aplicação fornecendo autenticação frontend e backend.
 

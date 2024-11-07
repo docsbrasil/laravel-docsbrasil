@@ -88,7 +88,7 @@ Após instalar o PHP, Composer e o instalador Laravel, você está pronto para c
 laravel new meu-app
 ```
 
-Uma vez que a aplicação foi criada, você pode iniciar o servidor de desenvolvimento local do Laravel, o worker de filas e o servidor de desenvolvimento Vite usando o script <Code>dev</Code> do Composer (Laravel 11.x):
+Uma vez que a aplicação foi criada, você pode iniciar o servidor de desenvolvimento local do Laravel, o worker de filas e o servidor de desenvolvimento Vite usando o script `dev` do Composer (Laravel 11.x):
 
 ```bash
 cd meu-app # Navegue até o diretório da sua aplicação
@@ -104,29 +104,29 @@ Se você deseja um ponto de partida ao desenvolver sua aplicação Laravel, cons
 
 ## Configuração Inicial
 
-Todas as configurações do Laravel são armazenadas no diretório <Code>config</Code>. Cada opção é documentada, então sinta-se à vontade para olhar os arquivos e se familiarizar com as opções disponíveis para você.
+Todas as configurações do Laravel são armazenadas no diretório `config`. Cada opção é documentada, então sinta-se à vontade para olhar os arquivos e se familiarizar com as opções disponíveis para você.
 
-O laravel não precisa de quase nenhuma configuração adicional. Você está livre para começar a desenvolver! No entanto, você pode querer revisar o arquivo <Code>config/app.php</Code> e sua documentação. Ele contém várias opções, como fuso horário (timezone) e localidade (locale), que você pode querer alterar de acordo com a sua aplicação.
+O laravel não precisa de quase nenhuma configuração adicional. Você está livre para começar a desenvolver! No entanto, você pode querer revisar o arquivo `config/app.php` e sua documentação. Ele contém várias opções, como fuso horário (timezone) e localidade (locale), que você pode querer alterar de acordo com a sua aplicação.
 
 ### Configuração Baseada em Ambiente
 
-Como muitas das opções de configuração do Laravel podem variar dependendo se sua aplicação está rodando em sua máquina local ou em um servidor web de produção, muitos valores de configuração importantes são definidos usando o arquivo <Code>.env</Code> que existe na raiz da sua aplicação.
+Como muitas das opções de configuração do Laravel podem variar dependendo se sua aplicação está rodando em sua máquina local ou em um servidor web de produção, muitos valores de configuração importantes são definidos usando o arquivo `.env` que existe na raiz da sua aplicação.
 
-Seu arquivo <Code>.env</Code> não deve ser commitado no controle de versão de sua aplicação, já que cada desenvolvedor/servidor que usa sua aplicação pode requerer uma configuração de ambiente diferente. Além disso, isso seria um risco de segurança no caso de um invasor ganhar acesso ao seu repositório de controle de versão, já que quaisquer credenciais sensíveis seriam expostas.
+Seu arquivo `.env` não deve ser commitado no controle de versão de sua aplicação, já que cada desenvolvedor/servidor que usa sua aplicação pode requerer uma configuração de ambiente diferente. Além disso, isso seria um risco de segurança no caso de um invasor ganhar acesso ao seu repositório de controle de versão, já que quaisquer credenciais sensíveis seriam expostas.
 
 <Info>
-Para mais informações sobre o arquivo <Code>.env</Code> e configuração baseada em ambiente, confira a documentação completa de <a href="/docs/11.x/configuration#environment-configuration">configuração</a>.
+Para mais informações sobre o arquivo <Code>.env</Code> e configuração baseada em ambiente, confira a documentação completa de <a href="/primeiros-passos/configuracao#configuracao-de-ambiente">configuração</a>.
 </Info>
 
 ### Banco de Dados e Migrações
 
-Agora que você criou sua aplicação Laravel, provavelmente deseja armazenar alguns dados em um banco de dados. Por padrão, o arquivo de configuração <Code>.env</Code> de sua aplicação especifica que o Laravel interagirá com um banco de dados SQLite.
+Agora que você criou sua aplicação Laravel, provavelmente deseja armazenar alguns dados em um banco de dados. Por padrão, o arquivo de configuração `.env` de sua aplicação especifica que o Laravel interagirá com um banco de dados SQLite.
 
-Durante a criação da aplicação, o Laravel criou um arquivo <Code>database/database.sqlite</Code> para você e executou as migrações necessárias para criar as tabelas do banco de dados da aplicação.
+Durante a criação da aplicação, o Laravel criou um arquivo `database/database.sqlite` para você e executou as migrações necessárias para criar as tabelas do banco de dados da aplicação.
 
-Se você preferir usar outro driver de banco de dados, como MySQL ou PostgreSQL, você pode atualizar o arquivo de configuração <Code>.env</Code> para usar o banco de dados apropriado. Por exemplo, se você deseja usar o MySQL, atualize as variáveis <Code>DB\_\*</Code> do arquivo de configuração <Code>.env</Code> da seguinte forma:
+Se você preferir usar outro driver de banco de dados, como MySQL ou PostgreSQL, você pode atualizar o arquivo de configuração `.env` para usar o banco de dados apropriado. Por exemplo, se você deseja usar o MySQL, atualize as variáveis `DB\_\*` do arquivo de configuração `.env` da seguinte forma:
 
-```env
+```ini
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -153,7 +153,7 @@ O Laravel <span class="highlight">deve sempre ser servido a partir do diretório
 
 <a href="https://herd.laravel.com/" target="_blank">Laravel Herd</a> é um ambiente de desenvolvimento Laravel e PHP nativo e extremamente rápido para macOS e Windows. O Herd inclui tudo o que você precisa para começar a desenvolver com Laravel, incluindo PHP e Nginx.
 
-Depois de instalar o Herd, você está pronto para começar a desenvolver com Laravel. O Herd inclui ferramentas de linha de comando para <Code>php</Code>, <Code>composer</Code>, <Code>laravel</Code>, <Code>expose</Code>, <Code>node</Code>, <Code>npm</Code> e <Code>nvm</Code>.
+Depois de instalar o Herd, você está pronto para começar a desenvolver com Laravel. O Herd inclui ferramentas de linha de comando para `php`, `composer`, `laravel`, `expose`, `node`, `npm` e `nvm`.
 
 <Info>
 O <a href="https://herd.laravel.com/#plans" target="_blank">Herd Pro</a> aprimora o Herd com recursos poderosos adicionais, como a capacidade de criar e gerenciar bancos de dados MySQL, Postgres e Redis locais, bem como visualização de e-mails locais e monitoramento de logs.
@@ -169,8 +169,8 @@ Após instalar o Herd, a maneira mais rápida de criar uma nova aplicação Lara
 
 ```bash
 cd ~/Herd
-laravel new my-app
-cd my-app
+laravel new meu-app
+cd meu-app
 herd open
 ```
 
@@ -184,7 +184,7 @@ Você pode baixar o instalador do Windows para o Herd <a href="https://herd.lara
 
 A interface do Herd é acessível clicando com o botão esquerdo no ícone da bandeja do sistema do Herd. Um clique com o botão direito abre o menu rápido com acesso a todas as ferramentas que você precisa diariamente.
 
-Durante a instalação, o Herd cria um diretório "estacionado" em seu diretório pessoal em <Code>%USERPROFILE%\Herd</Code>. Qualquer aplicação Laravel em um diretório estacionado será automaticamente servida pelo Herd, e você pode acessar qualquer aplicação Laravel neste diretório no domínio <Code>.test</Code> usando o nome do diretório.
+Durante a instalação, o Herd cria um diretório "estacionado" em seu diretório pessoal em `%USERPROFILE%\Herd`. Qualquer aplicação Laravel em um diretório estacionado será automaticamente servida pelo Herd, e você pode acessar qualquer aplicação Laravel neste diretório no domínio `.test` usando o nome do diretório.
 
 Após instalar o Herd, a maneira mais rápida de criar uma nova aplicação Laravel é usando o CLI do Laravel, que é empacotado com o Herd. Para começar, abra o Powershell e execute os seguintes comandos:
 
@@ -195,7 +195,7 @@ cd my-app
 herd open
 ```
 
-Você pode aprender mais sobre o Herd conferindo a <a href="You can learn more about Herd by checking out the Herd documentation for Windows." target="_blank">documentação do Herd</a>.
+Você pode aprender mais sobre o Herd conferindo a <a href="https://herd.laravel.com/docs/windows/1/getting-started/about-herd" target="_blank">documentação do Herd</a>.
 
 ## Instalação utilizando o Docker/Sail
 
@@ -206,7 +206,7 @@ O Docker é uma ferramenta para executar serviços em "containers" pequenos e le
 O Laravel Sail é uma CLI leve para interagir com a configuração Docker padrão do Laravel. O Sail fornece um ótimo ponto de partida para construir uma aplicação Laravel usando PHP, MySQL e Redis sem exigir experiência prévia com Docker.
 
 <Info>
-  Já é um especialista em Docker? Não se preocupe! Tudo sobre o Sail pode ser personalizado usando o arquivo <Code>docker-compose.yml</Code> incluído com o Laravel.
+  Já é um especialista em Docker? Não se preocupe! Tudo sobre o Sail pode ser personalizado usando o arquivo `docker-compose.yml` incluído com o Laravel.
 </Info>
 
 ### Sail no macOS
@@ -277,7 +277,7 @@ Para continuar aprendendo mais sobre o Laravel Sail, revise sua <a href="/pacote
 
 Obviamente, você vai precisar ser capaz de modificar os arquivos da aplicação Laravel que foram criados dentro da sua instalação WSL2. Para isso, recomendamos o uso do editor <a href="https://code.visualstudio.com">Visual Studio Code</a> da Microsoft e sua extensão de primeira parte para <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Desenvolvimento Remoto</a>.
 
-Uma vez que essas ferramentas estejam instaladas, você pode abrir qualquer aplicação Laravel executando o comando <Code>code .</Code> a partir do diretório raiz da sua aplicação usando o Windows Terminal.
+Uma vez que essas ferramentas estejam instaladas, você pode abrir qualquer aplicação Laravel executando o comando `code .` a partir do diretório raiz da sua aplicação usando o Windows Terminal.
 
 ### Sail no Linux
 
@@ -321,15 +321,15 @@ Para continuar aprendendo mais sobre o Laravel Sail, revise sua <a href="/pacote
 
 ### Escolhendo os Serviços no Sail
 
-Quando você cria uma nova aplicação Laravel via Sail, você pode usar a variável de consulta <Code>with</Code> para escolher quais serviços devem ser configurados no arquivo <Code>docker-compose.yml</Code> da sua nova aplicação. Os serviços disponíveis incluem <Code>mysql</Code>, <Code>pgsql</Code>, <Code>mariadb</Code>, <Code>redis</Code>, <Code>memcached</Code>, <Code>meilisearch</Code>, <Code>typesense</Code>, <Code>minio</Code>, <Code>selenium</Code> e <Code>mailpit</Code>:
+Quando você cria uma nova aplicação Laravel via Sail, você pode usar a variável de consulta `with` para escolher quais serviços devem ser configurados no arquivo `docker-compose.yml` da sua nova aplicação. Os serviços disponíveis incluem `mysql`, `pgsql`, `mariadb`, `redis`, `memcached`, `meilisearch`, `typesense`, `minio`, `selenium` e `mailpit`:
 
 ```bash
 curl -s "https://laravel.build/meu-app?with=mysql,redis" | bash
 ```
 
-Se você não especificar quais serviços deseja configurar, uma stack padrão de <Code>mysql</Code>, <Code>redis</Code>, <Code>meilisearch</Code>, <Code>mailpit</Code> e <Code>selenium</Code> será configurada.
+Se você não especificar quais serviços deseja configurar, uma stack padrão de `mysql`, `redis`, `meilisearch`, `mailpit` e `selenium` será configurada.
 
-Você pode instruir o Sail a instalar um Devcontainer padrão adicionando o parâmetro <Code>devcontainer</Code> à URL:
+Você pode instruir o Sail a instalar um Devcontainer padrão adicionando o parâmetro `devcontainer` à URL:
 
 ```bash
 curl -s "https://laravel.build/meu-app?with=mysql,redis&devcontainer" | bash
