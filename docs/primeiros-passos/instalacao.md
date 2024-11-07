@@ -84,7 +84,7 @@ composer global require laravel/installer
 
 Após instalar o PHP, Composer e o instalador Laravel, você está pronto para criar uma nova aplicação Laravel. O instalador Laravel solicitará que você selecione seu framework de teste, banco de dados e starter kit:
 
-```bash	
+```bash
 laravel new meu-app
 ```
 
@@ -124,7 +124,7 @@ Agora que você criou sua aplicação Laravel, provavelmente deseja armazenar al
 
 Durante a criação da aplicação, o Laravel criou um arquivo <Code>database/database.sqlite</Code> para você e executou as migrações necessárias para criar as tabelas do banco de dados da aplicação.
 
-Se você preferir usar outro driver de banco de dados, como MySQL ou PostgreSQL, você pode atualizar o arquivo de configuração <Code>.env</Code> para usar o banco de dados apropriado. Por exemplo, se você deseja usar o MySQL, atualize as variáveis <Code>DB_*</Code> do arquivo de configuração <Code>.env</Code> da seguinte forma:
+Se você preferir usar outro driver de banco de dados, como MySQL ou PostgreSQL, você pode atualizar o arquivo de configuração <Code>.env</Code> para usar o banco de dados apropriado. Por exemplo, se você deseja usar o MySQL, atualize as variáveis <Code>DB\_\*</Code> do arquivo de configuração <Code>.env</Code> da seguinte forma:
 
 ```env
 DB_CONNECTION=mysql
@@ -180,14 +180,6 @@ Você pode aprender mais sobre o Herd conferindo a <a href="https://herd.laravel
 
 ### Herd no Windows
 
-You can download the Windows installer for Herd on the Herd website. After the installation finishes, you can start Herd to complete the onboarding process and access the Herd UI for the first time.
-
-The Herd UI is accessible by left-clicking on Herd's system tray icon. A right-click opens the quick menu with access to all tools that you need on a daily basis.
-
-During installation, Herd creates a "parked" directory in your home directory at %USERPROFILE%\Herd. Any Laravel application in a parked directory will automatically be served by Herd, and you can access any Laravel application in this directory on the .test domain using its directory name.
-
-After installing Herd, the fastest way to create a new Laravel application is using the Laravel CLI, which is bundled with Herd. To get started, open Powershell and run the following commands:
-
 Você pode baixar o instalador do Windows para o Herd <a href="https://herd.laravel.com/" target="_blank">no site do Herd</a>. Após a instalação, você pode iniciar o Herd para completar o processo de integração e acessar a interface do Herd pela primeira vez.
 
 A interface do Herd é acessível clicando com o botão esquerdo no ícone da bandeja do sistema do Herd. Um clique com o botão direito abre o menu rápido com acesso a todas as ferramentas que você precisa diariamente.
@@ -204,3 +196,189 @@ herd open
 ```
 
 Você pode aprender mais sobre o Herd conferindo a <a href="You can learn more about Herd by checking out the Herd documentation for Windows." target="_blank">documentação do Herd</a>.
+
+## Instalação utilizando o Docker/Sail
+
+Queremos que seja o mais fácil possível começar com o Laravel, independentemente do seu sistema operacional preferido. Portanto, existem várias opções para desenvolver e executar uma aplicação Laravel em sua máquina local. Embora você possa desejar explorar essas opções em um momento posterior, o Laravel fornece o <a href="/pacotes/sail">Sail</a>, uma solução integrada para executar sua aplicação Laravel usando o <a href="https://www.docker.com" target="_blank">Docker</a>.
+
+O Docker é uma ferramenta para executar serviços em "containers" pequenos e leves que não interferem com o software ou configuração instalados em sua máquina local. Isso significa que você não precisa se preocupar em configurar ou definir ferramentas de desenvolvimento complicadas, como servidores web e bancos de dados em sua máquina local. Para começar, você só precisa instalar o <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a>.
+
+O Laravel Sail é uma CLI leve para interagir com a configuração Docker padrão do Laravel. O Sail fornece um ótimo ponto de partida para construir uma aplicação Laravel usando PHP, MySQL e Redis sem exigir experiência prévia com Docker.
+
+<Info>
+  Já é um especialista em Docker? Não se preocupe! Tudo sobre o Sail pode ser personalizado usando o arquivo <Code>docker-compose.yml</Code> incluído com o Laravel.
+</Info>
+
+### Sail no macOS
+
+Se você está desenvolvendo em um Mac e o <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> já está instalado, você pode usar um simples comando de terminal para criar uma nova aplicação Laravel. Por exemplo, para criar uma nova aplicação Laravel em um diretório chamado "meu-app", você pode executar o seguinte comando em seu terminal:
+
+```bash
+curl -s "https://laravel.build/meu-app" | bash
+```
+
+Obviamente, você pode alterar "meu-app" nesta URL para qualquer nome que você preferir - apenas certifique-se de que o nome da aplicação contenha apenas caracteres alfanuméricos, traços e sublinhados. O diretório da aplicação Laravel será criado dentro do diretório em que você executar o comando.
+
+A instalação do Sail pode levar vários minutos enquanto os contêineres são construídos em sua máquina local.
+
+Após a criação da aplicação, você pode navegar até o diretório da aplicação e iniciar o Laravel Sail. O Laravel Sail fornece uma interface de linha de comando simples para interagir com a configuração Docker padrão do Laravel:
+
+```bash
+cd meu-app
+
+./vendor/bin/sail up
+```
+
+Depois que os contêineres do Docker forem iniciados, você deve executar as <a href="/banco-de-dados/migracoes">migrações do banco de dados</a>:
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+Enfim, você pode acessar a aplicação em seu navegador web em: <a href="http://localhost">http://localhost</a>.
+
+### Sail no Windows
+
+Antes de criarmos uma nova aplicação Laravel em sua máquina Windows, certifique-se de instalar o <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>. Em seguida, você deve garantir que o Windows Subsystem for Linux 2 (WSL2) esteja instalado e habilitado. O WSL permite que você execute executáveis binários do Linux nativamente no Windows. Informações sobre como instalar e habilitar o WSL2 podem ser encontradas na <a href="https://learn.microsoft.com/en-us/windows/wsl/install">documentação do ambiente de desenvolvimento da Microsoft</a>.
+
+<Info>
+Após instalar e habilitar o WSL2, você deve garantir que o Docker Desktop esteja <a href="https://docs.docker.com/docker-for-windows/wsl/">configurado para usar o backend WSL2</a>.
+</Info>
+
+Agora, você está pronto para criar sua primeira aplicação Laravel. Inicie o <a href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab">Windows Terminal</a> e inicie uma nova sessão de terminal para o seu sistema operacional Linux WSL2. Em seguida, você pode usar um simples comando de terminal para criar uma nova aplicação Laravel. Por exemplo, para criar uma nova aplicação Laravel em um diretório chamado "meu-app", você pode executar o seguinte comando em seu terminal:
+
+```bash
+curl -s https://laravel.build/meu-app | bash
+```
+
+Obviamente, você pode alterar "meu-app" nesta URL para qualquer nome que você preferir - apenas certifique-se de que o nome da aplicação contenha apenas caracteres alfanuméricos, traços e sublinhados. O diretório da aplicação Laravel será criado dentro do diretório em que você executar o comando.
+
+A instalação do Sail pode levar vários minutos enquanto os contêineres são construídos em sua máquina local.
+
+Após a criação da aplicação, você pode navegar até o diretório da aplicação e iniciar o Laravel Sail. O Sail fornece uma interface de linha de comando simples para interagir com a configuração Docker padrão do Laravel:
+
+```bash
+cd meu-app
+
+./vendor/bin/sail up
+```
+
+Depois que os contêineres do Docker forem iniciados, você deve executar as <a href="/banco-de-dados/migracoes">migrações do banco de dados</a>:
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+<Info>
+Para continuar aprendendo mais sobre o Laravel Sail, revise sua <a href="/pacotes/sail">documentação completa</a>.
+</Info>
+
+#### Desenvolvendo Dentro do WSL2
+
+Obviamente, você vai precisar ser capaz de modificar os arquivos da aplicação Laravel que foram criados dentro da sua instalação WSL2. Para isso, recomendamos o uso do editor <a href="https://code.visualstudio.com">Visual Studio Code</a> da Microsoft e sua extensão de primeira parte para <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Desenvolvimento Remoto</a>.
+
+Uma vez que essas ferramentas estejam instaladas, você pode abrir qualquer aplicação Laravel executando o comando <Code>code .</Code> a partir do diretório raiz da sua aplicação usando o Windows Terminal.
+
+### Sail no Linux
+
+Se você está desenvolvendo no Linux e o <a href="https://docs.docker.com/compose/install/">Docker Compose</a> já está instalado, você pode usar um simples comando de terminal para criar uma nova aplicação Laravel.
+
+Primeiro, se você estiver usando o Docker Desktop para Linux, você deve executar o seguinte comando. Se você não estiver usando o Docker Desktop para Linux, você pode pular esta etapa:
+
+```bash
+docker context use default
+```
+
+Em seguida, para criar uma nova aplicação Laravel em um diretório chamado "meu-app", você pode executar o seguinte comando em seu terminal:
+
+```bash
+curl -s https://laravel.build/meu-app | bash
+```
+
+Obviamente, você pode alterar "meu-app" nesta URL para qualquer nome que você preferir - apenas certifique-se de que o nome da aplicação contenha apenas caracteres alfanuméricos, traços e sublinhados. O diretório da aplicação Laravel será criado dentro do diretório em que você executar o comando.
+
+A instalação do Sail pode levar vários minutos enquanto os contêineres são construídos em sua máquina local.
+
+Após a criação da aplicação, você pode navegar até o diretório da aplicação e iniciar o Laravel Sail. O Sail fornece uma interface de linha de comando simples para interagir com a configuração Docker padrão do Laravel:
+
+```bash
+cd meu-app
+
+./vendor/bin/sail up
+```
+
+Uma vez que os contêineres Docker da aplicação foram iniciados, você deve executar as <a href="/banco-de-dados/migracoes">migrações do banco de dados</a>:
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+Enfim, você pode acessar a aplicação em seu navegador web em: <a href="http://localhost">http://localhost</a>.
+
+<Info>
+Para continuar aprendendo mais sobre o Laravel Sail, revise sua <a href="/pacotes/sail">documentação completa</a>.
+</Info>
+
+### Escolhendo os Serviços no Sail
+
+Quando você cria uma nova aplicação Laravel via Sail, você pode usar a variável de consulta <Code>with</Code> para escolher quais serviços devem ser configurados no arquivo <Code>docker-compose.yml</Code> da sua nova aplicação. Os serviços disponíveis incluem <Code>mysql</Code>, <Code>pgsql</Code>, <Code>mariadb</Code>, <Code>redis</Code>, <Code>memcached</Code>, <Code>meilisearch</Code>, <Code>typesense</Code>, <Code>minio</Code>, <Code>selenium</Code> e <Code>mailpit</Code>:
+
+```bash
+curl -s "https://laravel.build/meu-app?with=mysql,redis" | bash
+```
+
+Se você não especificar quais serviços deseja configurar, uma stack padrão de <Code>mysql</Code>, <Code>redis</Code>, <Code>meilisearch</Code>, <Code>mailpit</Code> e <Code>selenium</Code> será configurada.
+
+Você pode instruir o Sail a instalar um Devcontainer padrão adicionando o parâmetro <Code>devcontainer</Code> à URL:
+
+```bash
+curl -s "https://laravel.build/meu-app?with=mysql,redis&devcontainer" | bash
+```
+
+## Suporte a IDE
+
+Você é livre para usar qualquer editor de código que desejar ao desenvolver aplicações Laravel; no entanto, o <a href="https://www.jetbrains.com/phpstorm/laravel/">PhpStorm</a> oferece suporte extensivo ao Laravel e seu ecossistema, incluindo o <a href="https://www.jetbrains.com/help/phpstorm/using-laravel-pint.html">Laravel Pint</a>.
+
+Além disso, o plugin <a href="https://laravel-idea.com/">Laravel Idea</a> para PhpStorm, mantido pela comunidade, oferece uma variedade de aprimoramentos úteis para o IDE.
+
+## Próximos Passos
+
+<p>Now that you have created your Laravel application, you may be wondering what to learn next. First, we strongly recommend becoming familiar with how Laravel works by reading the following documentation:</p>
+
+Agora que você criou sua primeira aplicação Laravel, você pode estar se perguntando o que aprender a seguir. Primeiramente, recomendamos fortemente que você se familiarize com como o Laravel funciona lendo a seguinte documentação:
+
+- <a href="/conceitos-de-arquitetura/ciclo-de-vida-da-requisicao">Ciclo de Vida da Requisição</a>
+- <a href="/primeiros-passos/configuracao">Configuração</a>
+- <a href="/primeiros-passos/estrutura-de-diretorios">Estrutura de Diretórios</a>
+- <a href="/primeiros-passos/frontend">Frontend</a>
+- <a href="/conceitos-de-arquitetura/service-container">Service Container</a>
+- <a href="/conceitos-de-arquitetura/facades">Facades</a>
+
+Como você deseja usar o Laravel também ditará os próximos passos em sua jornada. Existem várias maneiras de usar o Laravel, e exploraremos dois casos de uso principais para o framework abaixo.
+
+<Info>
+  Novo no Laravel? Confira o <a href="https://bootcamp.laravel.com">Laravel Bootcamp</a> para um tour prático do
+      framework enquanto te guiamos na construção da sua primeira aplicação Laravel.
+</Info>
+
+### Laravel o Framework Full-Stack
+
+O laravel pode servir como um framework full-stack. Por "full stack" framework, queremos dizer que você vai usar o Laravel para rotear as requisições para sua aplicação e renderizar seu frontend via <a href="/fundamentos/blade-templates" target="_blank">Templates Blade</a> ou uma tecnologia híbrida de SPA como <a href="https://inertiajs.com" target="_blank">Inertia</a>. Esta é a maneira mais comum de usar o framework Laravel e, em nossa opinião, a maneira mais produtiva de usar o Laravel.
+
+Se você planeja usar o Laravel dessa maneira, você pode querer conferir nossa documentação sobre <a href="/primeiros-passos/frontend" target="_blank">desenvolvimento frontend</a>, <a href="/fundamentos/rotas" target="_blank">roteamento</a>, <a href="/fundamentos/views" target="_blank">views</a> ou o <a href="/eloquent-orm/introducao" target="_blank">Eloquent ORM</a>. Além disso, você pode se interessar em aprender sobre pacotes da comunidade como <a href="https://livewire.laravel.com" target="_blank">Livewire</a> e <a href="https://inertiajs.com" target="_blank">Inertia</a>. Esses pacotes permitem que você use o Laravel como um framework full-stack enquanto desfruta de muitos dos benefícios de UI fornecidos por uma SPA.
+
+Se você estiver usando o Laravel como um framework full-stack, também recomendamos fortemente que você aprenda a compilar o CSS e o JavaScript da sua aplicação usando o <a href="/fundamentos/asset-bundling" target="_blank">Vite</a>.
+
+<Info>
+Se você deseja um ponto de partida ao desenvolver sua aplicação Laravel, considere usar um dos nossos <a href="/primeiros-passos/starter-kits" target="_blank">Starter Kits</a>. Os starter kits do Laravel fornecem um esqueleto com autenticação para sua nova aplicação Laravel.
+</Info>
+
+### Laravel o Backend de API
+
+O Laravel também pode servir como um backend de API para uma aplicação de página única JavaScript ou aplicativo móvel. Por exemplo, você pode usar o Laravel como um backend de API para sua aplicação <a href="https://nextjs.org">Next.js</a>. Neste contexto, você pode usar o Laravel para fornecer <a href="/pacotes/sanctum">autenticação</a> e armazenamento/recuperação de dados para sua aplicação, enquanto também aproveita os poderosos serviços do Laravel, como filas, e-mails, notificações e muito mais.
+
+Se você planeja usar o Laravel dessa maneira, você pode querer conferir nossa documentação sobre <a href="/fundamentos/rotas">roteamento</a>, <a href="/eloquent-orm/introducao">Eloquent ORM</a> e <a href="/banco-de-dados/migracoes">migrações</a>.
+
+<Info>
+Precisa de um ponto de partida para estruturar seu backend Laravel e frontend Next.js? O Laravel Breeze oferece um <a href="/primeiros-passos/starter-kits">stack de API</a> bem como uma <a href="https://github.com/laravel/breeze-next">implementação frontend Next.js</a> para que você possa começar em minutos.
+</Info>

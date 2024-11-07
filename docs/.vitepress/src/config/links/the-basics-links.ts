@@ -34,7 +34,7 @@ export const theBasicsLinks = {
       link: "/fundamentos/blade-templates",
     },
     {
-      text: "Compilação de Assets",
+      text: "Compilação de Assets (Vite)",
       link: "/fundamentos/asset-bundling",
     },
     {
