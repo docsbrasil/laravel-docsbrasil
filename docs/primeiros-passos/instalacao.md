@@ -92,7 +92,7 @@ npm install && npm run build # Instale as dependências do Node e compile os ass
 composer dev
 ```
 
-Uma vez que você tenha iniciado o servidor de desenvolvimento, sua aplicação estará acessível em seu navegador web em <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>. Em seguida, você está pronto para <a href="#next-steps">começar a dar seus próximos passos no ecossistema Laravel</a>. Claro, você também pode querer <a href="#databases-and-migrations">configurar um banco de dados</a>.
+Uma vez que você tenha iniciado o servidor de desenvolvimento, sua aplicação estará acessível em seu navegador web em http://localhost:8000. Em seguida, você está pronto para <a href="#next-steps">começar a dar seus próximos passos no ecossistema Laravel</a>. Claro, você também pode querer <a href="#databases-and-migrations">configurar um banco de dados</a>.
 
 ::: tip
 Se você deseja um ponto de partida ao desenvolver sua aplicação Laravel, considere usar um dos nossos <a href="/docs/11.x/starter-kits">starter kits</a>. Os starter kits do Laravel fornecem um esqueleto com autenticação para sua nova aplicação Laravel.
@@ -231,7 +231,7 @@ Depois que os contêineres do Docker forem iniciados, você deve executar as <a 
 ./vendor/bin/sail artisan migrate
 ```
 
-Enfim, você pode acessar a aplicação em seu navegador web em: <a href="http://localhost">http://localhost</a>.
+Enfim, você pode acessar a aplicação em seu navegador web em: http://localhost.
 
 ### Sail no Windows
 
@@ -309,7 +309,7 @@ Uma vez que os contêineres Docker da aplicação foram iniciados, você deve ex
 ./vendor/bin/sail artisan migrate
 ```
 
-Enfim, você pode acessar a aplicação em seu navegador web em: <a href="http://localhost">http://localhost</a>.
+Enfim, você pode acessar a aplicação em seu navegador web em: http://localhost.
 
 ::: tip
 Para continuar aprendendo mais sobre o Laravel Sail, revise sua <a href="/pacotes/sail">documentação completa</a>.
