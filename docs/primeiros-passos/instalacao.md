@@ -343,8 +343,6 @@ Além disso, o plugin <a href="https://laravel-idea.com/">Laravel Idea</a> para 
 
 ## Próximos Passos
 
-<p>Now that you have created your Laravel application, you may be wondering what to learn next. First, we strongly recommend becoming familiar with how Laravel works by reading the following documentation:</p>
-
 Agora que você criou sua primeira aplicação Laravel, você pode estar se perguntando o que aprender a seguir. Primeiramente, recomendamos fortemente que você se familiarize com como o Laravel funciona lendo a seguinte documentação:
 
 - <a href="/conceitos-de-arquitetura/ciclo-de-vida-da-requisicao">Ciclo de Vida da Requisição</a>

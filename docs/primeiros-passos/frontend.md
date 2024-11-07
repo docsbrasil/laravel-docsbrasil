@@ -161,8 +161,6 @@ Como você pode ver, o Inertia permite que você aproveite todo o poder do Vue o
 
 #### Renderização do lado do servidor (SSR)
 
-<p>If you're concerned about diving into Inertia because your application requires server-side rendering, don't worry. Inertia offers <a href="https://inertiajs.com/server-side-rendering">server-side rendering support</a>. And, when deploying your application via <a href="https://forge.laravel.com">Laravel Forge</a>, it's a breeze to ensure that Inertia's server-side rendering process is always running.</p>
-
 Se você está preocupado em mergulhar no Inertia porque sua aplicação requer renderização do lado do servidor, não se preocupe. O Inertia oferece suporte à <a href="https://inertiajs.com/server-side-rendering">renderização do lado do servidor</a>. E, ao fazer o deploy de sua aplicação via <a href="https://forge.laravel.com">Laravel Forge</a>, é muito fácil garantir que o processo de renderização do lado do servidor do Inertia esteja sempre em execução.
 
 ### Starter Kits
