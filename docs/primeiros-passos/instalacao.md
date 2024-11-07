@@ -120,3 +120,87 @@ Para mais informações sobre o arquivo <Code>.env</Code> e configuração basea
 
 ### Banco de Dados e Migrações
 
+Agora que você criou sua aplicação Laravel, provavelmente deseja armazenar alguns dados em um banco de dados. Por padrão, o arquivo de configuração <Code>.env</Code> de sua aplicação especifica que o Laravel interagirá com um banco de dados SQLite.
+
+Durante a criação da aplicação, o Laravel criou um arquivo <Code>database/database.sqlite</Code> para você e executou as migrações necessárias para criar as tabelas do banco de dados da aplicação.
+
+Se você preferir usar outro driver de banco de dados, como MySQL ou PostgreSQL, você pode atualizar o arquivo de configuração <Code>.env</Code> para usar o banco de dados apropriado. Por exemplo, se você deseja usar o MySQL, atualize as variáveis <Code>DB_*</Code> do arquivo de configuração <Code>.env</Code> da seguinte forma:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Se você optar por usar um banco de dados diferente do SQLite, você precisará criar o banco de dados e executar as migrações do banco de dados de sua aplicação:
+
+```bash
+php artisan migrate
+```
+
+<Info>
+Se você estiver desenvolvendo no macOS ou Windows e precisar instalar o MySQL, PostgreSQL ou Redis localmente, considere usar o <a href="https://herd.laravel.com/#plans" target="_blank">Herd Pro</a>.
+</Info>
+
+### Configuração de Diretórios
+
+O Laravel <span class="highlight">deve sempre ser servido a partir do diretório raiz do "diretório web" configurado para o seu servidor web</span>. Você não deve tentar servir uma aplicação Laravel a partir de um subdiretório do "diretório web". Tentar fazer isso poderia expor arquivos sensíveis presentes em sua aplicação.
+
+## Instalação Local Usando o Herd
+
+<a href="https://herd.laravel.com/" target="_blank">Laravel Herd</a> é um ambiente de desenvolvimento Laravel e PHP nativo e extremamente rápido para macOS e Windows. O Herd inclui tudo o que você precisa para começar a desenvolver com Laravel, incluindo PHP e Nginx.
+
+Depois de instalar o Herd, você está pronto para começar a desenvolver com Laravel. O Herd inclui ferramentas de linha de comando para <Code>php</Code>, <Code>composer</Code>, <Code>laravel</Code>, <Code>expose</Code>, <Code>node</Code>, <Code>npm</Code> e <Code>nvm</Code>.
+
+<Info>
+O <a href="https://herd.laravel.com/#plans" target="_blank">Herd Pro</a> aprimora o Herd com recursos poderosos adicionais, como a capacidade de criar e gerenciar bancos de dados MySQL, Postgres e Redis locais, bem como visualização de e-mails locais e monitoramento de logs.
+</Info>
+
+### Herd no macOS
+
+Se você desenvolve no macOS, você pode baixar o instalador do <a href="https://herd.laravel.com/" target="_blank">Herd</a>. O instalador baixa automaticamente a versão mais recente do PHP e configura seu Mac para sempre executar o <a href="https://www.nginx.com/" target="_blank">Nginx</a> em segundo plano.
+
+O Herd para macOS usa o <a href="https://en.wikipedia.org/wiki/Dnsmasq" target="_blank">dnsmasq</a> para suportar diretórios "estacionados". Qualquer aplicação Laravel em um diretório estacionado será automaticamente servida pelo Herd. Por padrão, o Herd cria um diretório estacionado em ~/Herd e você pode acessar qualquer aplicação Laravel neste diretório no domínio .test usando o nome do diretório.
+
+Após instalar o Herd, a maneira mais rápida de criar uma nova aplicação Laravel é usando o CLI do Laravel, que é empacotado com o Herd:
+
+```bash
+cd ~/Herd
+laravel new my-app
+cd my-app
+herd open
+```
+
+Obviamente, você sempre pode gerenciar seus diretórios e outras configurações PHP através da interface do Herd, que pode ser aberta a partir do menu do Herd na bandeja do sistema.
+
+Você pode aprender mais sobre o Herd conferindo a <a href="https://herd.laravel.com/docs" target="_blank">documentação do Herd</a>.
+
+### Herd no Windows
+
+You can download the Windows installer for Herd on the Herd website. After the installation finishes, you can start Herd to complete the onboarding process and access the Herd UI for the first time.
+
+The Herd UI is accessible by left-clicking on Herd's system tray icon. A right-click opens the quick menu with access to all tools that you need on a daily basis.
+
+During installation, Herd creates a "parked" directory in your home directory at %USERPROFILE%\Herd. Any Laravel application in a parked directory will automatically be served by Herd, and you can access any Laravel application in this directory on the .test domain using its directory name.
+
+After installing Herd, the fastest way to create a new Laravel application is using the Laravel CLI, which is bundled with Herd. To get started, open Powershell and run the following commands:
+
+Você pode baixar o instalador do Windows para o Herd <a href="https://herd.laravel.com/" target="_blank">no site do Herd</a>. Após a instalação, você pode iniciar o Herd para completar o processo de integração e acessar a interface do Herd pela primeira vez.
+
+A interface do Herd é acessível clicando com o botão esquerdo no ícone da bandeja do sistema do Herd. Um clique com o botão direito abre o menu rápido com acesso a todas as ferramentas que você precisa diariamente.
+
+Durante a instalação, o Herd cria um diretório "estacionado" em seu diretório pessoal em <Code>%USERPROFILE%\Herd</Code>. Qualquer aplicação Laravel em um diretório estacionado será automaticamente servida pelo Herd, e você pode acessar qualquer aplicação Laravel neste diretório no domínio <Code>.test</Code> usando o nome do diretório.
+
+Após instalar o Herd, a maneira mais rápida de criar uma nova aplicação Laravel é usando o CLI do Laravel, que é empacotado com o Herd. Para começar, abra o Powershell e execute os seguintes comandos:
+
+```bash
+cd ~\Herd
+laravel new my-app
+cd my-app
+herd open
+```
+
+Você pode aprender mais sobre o Herd conferindo a <a href="You can learn more about Herd by checking out the Herd documentation for Windows." target="_blank">documentação do Herd</a>.

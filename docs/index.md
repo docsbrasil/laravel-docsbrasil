@@ -14,7 +14,7 @@ hero:
       text: Contribua com a tradução
       link: /
   image:
-    src: /logo_min.webp
+    src: /logo_laravel.webp
     alt: Laravel Brasil
 
 features:

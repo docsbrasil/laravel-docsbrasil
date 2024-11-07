@@ -1,10 +1,10 @@
 # Dev Docs Brasil - Laravel
 
-Esse projeto contém a tradução da documentação do Laravel para o português do Brasil.
+Esse projeto contém a tradução da documentação do Laravel para o português.
 
 ## Contribuindo
 
-Se você deseja contribuir com a tradução da documentação do Laravel, siga as instruções abaixo:
+Se você deseja contribuir com a tradução, siga as instruções abaixo:
 
 1. Faça um fork desse repositório.
 2. Clone o repositório para a sua máquina local.
@@ -17,3 +17,4 @@ Se você deseja contribuir com a tradução da documentação do Laravel, siga a
 ## Agradecimentos
 
 Agradecemos a todos os contribuidores que ajudaram a traduzir a documentação.
+O seu apoio é muito importante para a comunidade brasileira de desenvolvimento.
