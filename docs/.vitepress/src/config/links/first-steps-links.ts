@@ -1,5 +1,5 @@
 export const firstStepsLinks = {
-  text: "Primeiros passos (WIP)",
+  text: "Primeiros passos",
   items: [
     {
       text: "Instalação",
