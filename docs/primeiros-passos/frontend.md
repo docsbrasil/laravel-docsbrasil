@@ -2,7 +2,7 @@
 
 ## Introdução
 
-O laravel é um framework backend que fornece todas as funcionalidades necessárias para construir aplicações web modernas, como <a href="/fundamentos/rotas" target="_blank">rotas</a>, <a href="/fundamentos/validacao" target="_blank">validação</a>, <a href="/explorando-mais-a-fundo/cache" target="_blank">cache</a>, <a href="/explorando-mais-a-fundo/filas" target="_blank">filas</a>, <a href="/explorando-mais-a-fundo/armazenamento-de-arquivos" target="_blank">armazenamento de arquivos</a> e muito mais. No entanto, acreditamos que é importante oferecer aos desenvolvedores uma bela experiência full-stack, incluindo abordagens poderosas para construir o frontend de sua aplicação.
+O laravel é um framework backend que fornece todas as funcionalidades necessárias para construir aplicações web modernas, como <a href="/fundamentos/rotas" target="_blank">rotas</a>, <a href="/fundamentos/validacao" target="_blank">validação</a>, <a href="/conhecendo-mais/cache" target="_blank">cache</a>, <a href="/conhecendo-mais/filas" target="_blank">filas</a>, <a href="/conhecendo-mais/armazenamento-de-arquivos" target="_blank">armazenamento de arquivos</a> e muito mais. No entanto, acreditamos que é importante oferecer aos desenvolvedores uma bela experiência full-stack, incluindo abordagens poderosas para construir o frontend de sua aplicação.
 
 Existem duas maneiras principais de abordar o desenvolvimento de frontend ao construir uma aplicação com Laravel, e a abordagem que você escolher é determinada por se você deseja construir seu frontend aproveitando o PHP ou usando frameworks JavaScript como Vue e React. Discutiremos essas duas opções abaixo para que você possa tomar uma decisão informada sobre a melhor abordagem para o desenvolvimento de frontend de sua aplicação.
 
@@ -29,6 +29,7 @@ No Laravel, essa abordagem de renderização de HTML ainda pode ser alcançada u
     @endforeach
 </div>
 ```
+
 Quando você constrói aplicações dessa maneira, envios de formulários e outras interações de página normalmente recebem um novo documento HTML inteiro do servidor e a página inteira é renderizada novamente pelo navegador. Mesmo hoje, muitas aplicações podem ser perfeitamente adequadas para ter seus frontends construídos dessa maneira usando modelos Blade simples.
 
 ### Atendendo às Expectativas
@@ -47,20 +48,20 @@ Quando você usa Livewire, você criará "componentes" Livewire que renderizam u
 
 ```php
 <?php
- 
+
 namespace App\Http\Livewire;
- 
+
 use Livewire\Component;
- 
+
 class Counter extends Component
 {
     public $count = 0;
- 
+
     public function increment()
     {
         $this->count++;
     }
- 
+
     public function render()
     {
         return view('livewire.counter');
@@ -103,14 +104,14 @@ Depois de instalar o Inertia em sua aplicação Laravel, você escreverá rotas 
 
 ```php
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Inertia\Inertia;
 use Inertia\Response;
- 
+
 class UserController extends Controller
 {
     /**
@@ -129,26 +130,22 @@ Uma página Inertia corresponde a um componente Vue ou React, normalmente armaze
 
 ```vue
 <script setup>
-import Layout from '@/Layouts/Authenticated.vue';
-import { Head } from '@inertiajs/vue3';
- 
-const props = defineProps(['user']);
+import Layout from "@/Layouts/Authenticated.vue";
+import { Head } from "@inertiajs/vue3";
+
+const props = defineProps(["user"]);
 </script>
- 
+
 <template>
-    <Head title="User Profile" />
- 
-    <Layout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Profile
-            </h2>
-        </template>
- 
-        <div class="py-12">
-            Hello, {{ user.name }}
-        </div>
-    </Layout>
+  <Head title="User Profile" />
+
+  <Layout>
+    <template #header>
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">Profile</h2>
+    </template>
+
+    <div class="py-12">Hello, {{ user.name }}</div>
+  </Layout>
 </template>
 ```
 

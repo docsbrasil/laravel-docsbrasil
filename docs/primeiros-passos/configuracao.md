@@ -146,7 +146,7 @@ if (App::environment(['local', 'staging'])) {
 ```
 
 ::: tip
- A detecção do ambiente atual da aplicação pode ser substituída definindo uma variável de ambiente `APP_ENV` em nível de servidor.
+A detecção do ambiente atual da aplicação pode ser substituída definindo uma variável de ambiente `APP_ENV` em nível de servidor.
 :::
 
 ### Criptografando Arquivos de Ambiente
@@ -329,7 +329,7 @@ php artisan down --with-secret
 Ao acessar esta rota oculta, você será redirecionado para a rota `/` da aplicação. Depois que o cookie for emitido para o seu navegador, você poderá navegar pela aplicação normalmente, como se ela não estivesse em modo de manutenção.
 
 ::: tip
-Seu token secreto para o modo de manutenção deve, normalmente, consistir em caracteres alfanuméricos e, opcionalmente, traços. Evite utilizar caracteres com significado especial em URLs, como `?` ou `&amp;`. 
+Seu token secreto para o modo de manutenção deve, normalmente, consistir em caracteres alfanuméricos e, opcionalmente, traços. Evite utilizar caracteres com significado especial em URLs, como `?` ou `&amp;`.
 :::
 
 #### Modo de Manutenção em Múltiplos Servidores
@@ -377,7 +377,7 @@ Você pode personalizar o template padrão do modo de manutenção definindo seu
 
 #### Modo de Manutenção e Filas
 
-Enquanto sua aplicação estiver no modo de manutenção, nenhum <a href="/explorando-mais-a-fundo/filas">job em fila</a> será processado. Os jobs continuarão a ser processados normalmente assim que a aplicação sair do modo de manutenção.
+Enquanto sua aplicação estiver no modo de manutenção, nenhum <a href="/conhecendo-mais/filas">job em fila</a> será processado. Os jobs continuarão a ser processados normalmente assim que a aplicação sair do modo de manutenção.
 
 #### Alternativas ao Modo de Manutenção
 

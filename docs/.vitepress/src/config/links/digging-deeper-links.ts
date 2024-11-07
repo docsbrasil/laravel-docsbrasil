@@ -1,85 +1,85 @@
 export const diggingDeeperLinks = {
-  text: "Explorando Mais a Fundo (WIP)",
+  text: "Conhecendo mais (WIP)",
   items: [
     {
       text: "Console Artisan",
-      link: "/explorando-mais-a-fundo/console-artisan",
+      link: "/conhecendo-mais/console-artisan",
     },
     {
       text: "Broadcasting",
-      link: "/explorando-mais-a-fundo/broadcasting",
+      link: "/conhecendo-mais/broadcasting",
     },
     {
       text: "Cache",
-      link: "/explorando-mais-a-fundo/cache",
+      link: "/conhecendo-mais/cache",
     },
     {
       text: "Coleções (Collections)",
-      link: "/explorando-mais-a-fundo/colecoes",
+      link: "/conhecendo-mais/colecoes",
     },
     {
       text: "Concorrência",
-      link: "/explorando-mais-a-fundo/concorrencia",
+      link: "/conhecendo-mais/concorrencia",
     },
     {
       text: "Contexto",
-      link: "/explorando-mais-a-fundo/contexto",
+      link: "/conhecendo-mais/contexto",
     },
     {
       text: "Contratos",
-      link: "/explorando-mais-a-fundo/contratos",
+      link: "/conhecendo-mais/contratos",
     },
     {
       text: "Eventos",
-      link: "/explorando-mais-a-fundo/eventos",
+      link: "/conhecendo-mais/eventos",
     },
     {
       text: "Armazenamento de Arquivos",
-      link: "/explorando-mais-a-fundo/armazenamento-de-arquivos",
+      link: "/conhecendo-mais/armazenamento-de-arquivos",
     },
     {
       text: "Helpers",
-      link: "/explorando-mais-a-fundo/helpers",
+      link: "/conhecendo-mais/helpers",
     },
     {
       text: "Cliente HTTP",
-      link: "/explorando-mais-a-fundo/cliente-http",
+      link: "/conhecendo-mais/cliente-http",
     },
     {
       text: "Localização",
-      link: "/explorando-mais-a-fundo/localizacao",
+      link: "/conhecendo-mais/localizacao",
     },
     {
       text: "Emails",
-      link: "/explorando-mais-a-fundo/emails",
+      link: "/conhecendo-mais/emails",
     },
     {
       text: "Notificações",
-      link: "/explorando-mais-a-fundo/notificacoes",
+      link: "/conhecendo-mais/notificacoes",
     },
     {
       text: "Desenvolvimento de Pacotes",
-      link: "/explorando-mais-a-fundo/desenvolvimento-de-pacotes",
+      link: "/conhecendo-mais/desenvolvimento-de-pacotes",
     },
     {
       text: "Processos",
-      link: "/explorando-mais-a-fundo/processos",
+      link: "/conhecendo-mais/processos",
     },
     {
       text: "Filas",
-      link: "/explorando-mais-a-fundo/filas",
+      link: "/conhecendo-mais/filas",
     },
     {
       text: "Limite de Requisições (Rate Limiting)",
-      link: "/explorando-mais-a-fundo/limitacao-de-taxa",
+      link: "/conhecendo-mais/limitacao-de-taxa",
     },
     {
       text: "Strings",
-      link: "/explorando-mais-a-fundo/strings",
+      link: "/conhecendo-mais/strings",
     },
     {
       text: "Agendamento de Tarefas",
-      link: "/explorando-mais-a-fundo/agendamento-de-tarefas",
+      link: "/conhecendo-mais/agendamento-de-tarefas",
     },
   ],
   collapsed: true,

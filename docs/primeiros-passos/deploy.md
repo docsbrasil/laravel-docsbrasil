@@ -147,7 +147,6 @@ A opção de debug em seu arquivo de configuração `config/app.php` determina q
 Em seu ambiente de produção, este valor deve sempre ser `false`. Se a variável `APP_DEBUG` estiver definida como `true` em produção, você corre o risco de expor valores de configuração sensíveis aos usuários finais.
 :::
 
-
 ## A "Health Route"
 
 O Laravel inclui uma rota de verificação de saúde integrada que pode ser usada para monitorar o status de sua aplicação. Em produção, esta rota pode ser usada para relatar o status de sua aplicação a um monitor de tempo de atividade, balanceador de carga ou sistema de orquestração, como o Kubernetes.
@@ -163,7 +162,7 @@ Por padrão, a rota de verificação de saúde é servida em `/up` e retornará 
 )
 ```
 
-Quando requisições HTTP são feitas para esta rota, o Laravel também despachará um evento `Illuminate\Foundation\Events\DiagnosingHealth`, permitindo que você realize verificações de saúde adicionais relevantes para sua aplicação. Dentro de um <a href="/explorando-mais-a-fundo/" target="_blank">listener</a> para este evento, você pode verificar o status do banco de dados ou cache de sua aplicação. Se você detectar um problema com sua aplicação, você pode simplesmente lançar uma exceção a partir do listener.
+Quando requisições HTTP são feitas para esta rota, o Laravel também despachará um evento `Illuminate\Foundation\Events\DiagnosingHealth`, permitindo que você realize verificações de saúde adicionais relevantes para sua aplicação. Dentro de um <a href="/conhecendo-mais/" target="_blank">listener</a> para este evento, você pode verificar o status do banco de dados ou cache de sua aplicação. Se você detectar um problema com sua aplicação, você pode simplesmente lançar uma exceção a partir do listener.
 
 ## Deploy fácil com Forge / Vapor
 

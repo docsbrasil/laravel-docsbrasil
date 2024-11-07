@@ -51,7 +51,7 @@ export const theBasicsLinks = {
     },
     {
       text: "Tratamento de Erros",
-      link: "/fundamentos/error-handling",
+      link: "/fundamentos/tratamento-de-erros",
     },
     {
       text: "Logging",

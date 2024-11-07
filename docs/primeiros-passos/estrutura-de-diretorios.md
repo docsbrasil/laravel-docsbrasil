@@ -5,7 +5,7 @@
 A estrutura padrão da aplicação Laravel é projetada para fornecer um ótimo ponto de partida tanto para aplicações grandes quanto pequenas. No entanto, você está livre para organizar sua aplicação da maneira que preferir. O Laravel impõe quase nenhuma restrição sobre onde qualquer classe pode estar localizada desde que o Composer consiga carregar automaticamente a classe.
 
 ::: tip Novo no Laravel?
-Novo no Laravel? Confira o <a href="https://bootcamp.laravel.com" target="_blank">Laravel Bootcamp</a> para um tour prático pelo framework, onde o ajudaremos a criar sua primeira aplicação Laravel. 
+Novo no Laravel? Confira o <a href="https://bootcamp.laravel.com" target="_blank">Laravel Bootcamp</a> para um tour prático pelo framework, onde o ajudaremos a criar sua primeira aplicação Laravel.
 :::
 
 ## Diretório raiz (root)
@@ -40,13 +40,13 @@ O diretório `routes` contém todas as definições de rotas para a sua aplicaç
 
 O arquivo `web.php` contém rotas que o Laravel coloca no grupo de middleware `web`, que fornece estado de sessão, proteção CSRF e criptografia de cookies. Se sua aplicação não oferecer uma API RESTful sem estado, então todas as suas rotas provavelmente serão definidas no arquivo `web.php`.
 
-O arquivo `console.php` é onde você pode definir todos os seus comandos baseados em closure para o console. Cada closure é vinculada a uma instância de comando, permitindo uma abordagem simples para interagir com os métodos de E/S de cada comando. Embora este arquivo não defina rotas HTTP, ele define pontos de entrada baseados em console (rotas) para sua aplicação. Você também pode <a href="/explorando-mais-a-fundo/agendamento-de-tarefas" target="_blank">agendar</a> tarefas no arquivo `console.php`.
+O arquivo `console.php` é onde você pode definir todos os seus comandos baseados em closure para o console. Cada closure é vinculada a uma instância de comando, permitindo uma abordagem simples para interagir com os métodos de E/S de cada comando. Embora este arquivo não defina rotas HTTP, ele define pontos de entrada baseados em console (rotas) para sua aplicação. Você também pode <a href="/conhecendo-mais/agendamento-de-tarefas" target="_blank">agendar</a> tarefas no arquivo `console.php`.
 
 Opcionalmente, você pode instalar arquivos de rota adicionais para rotas de API (`api.php`) e canais de broadcasting (`channels.php`) através dos comandos Artisan `install` e `install`.
 
 O arquivo `api.php` contém rotas que são destinadas a ser sem estado, portanto, as requisições que entram na aplicação por meio dessas rotas devem ser autenticadas <a href="/pacotes/sanctum" target="_blank">via tokens</a> e não terão acesso ao estado da sessão.
 
-O arquivo `channels.php` é onde você pode registrar todos os canais de <a href="/explorando-mais-a-fundo/broadcasting" target="_blank">broadcasting</a> de eventos que sua aplicação suporta.
+O arquivo `channels.php` é onde você pode registrar todos os canais de <a href="/conhecendo-mais/broadcasting" target="_blank">broadcasting</a> de eventos que sua aplicação suporta.
 
 ### O Diretório Storage
 
@@ -76,7 +76,7 @@ Muitas das classes no diretório `app` podem ser geradas pelo Artisan via comand
 
 ### O Diretório `Broadcasting`
 
-O diretório `Broadcasting` contém todas as classes de canal de broadcast para a sua aplicação. Essas classes são geradas usando o comando `make:channel`. Este diretório não existe por padrão, mas será criado para você quando você criar seu primeiro canal. Para aprender mais sobre canais, confira a documentação sobre <a href="/explorando-mais-a-fundo/broadcasting" target="_blank">broadcasting de eventos</a>.
+O diretório `Broadcasting` contém todas as classes de canal de broadcast para a sua aplicação. Essas classes são geradas usando o comando `make:channel`. Este diretório não existe por padrão, mas será criado para você quando você criar seu primeiro canal. Para aprender mais sobre canais, confira a documentação sobre <a href="/conhecendo-mais/broadcasting" target="_blank">broadcasting de eventos</a>.
 
 ### O Diretório `Console`
 
@@ -84,7 +84,7 @@ O diretório `Console` contém todos os comandos Artisan da sua aplicação. Ess
 
 ### O Diretório `Events`
 
-O diretório `Events` contém todas as classes de <a href="/explorando-mais-a-fundo/eventos" target="_blank">eventos</a> para a sua aplicação. Essas classes são geradas usando o comando `make:event`. Eventos são uma maneira de alertar outras partes da sua aplicação que uma ação específica ocorreu, fornecendo uma grande flexibilidade e desacoplamento.
+O diretório `Events` contém todas as classes de <a href="/conhecendo-mais/eventos" target="_blank">eventos</a> para a sua aplicação. Essas classes são geradas usando o comando `make:event`. Eventos são uma maneira de alertar outras partes da sua aplicação que uma ação específica ocorreu, fornecendo uma grande flexibilidade e desacoplamento.
 
 ### O Diretório `Exceptions`
 
@@ -96,15 +96,15 @@ O diretório `Http` contém seus controllers, middleware e requests. Quase toda 
 
 ### O Diretório `Jobs`
 
-Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:job` do Artisan. O diretório `Jobs` abriga os <a href="/explorando-mais-a-fundo/filas" target="_blank">jobs</a> para a sua aplicação. Jobs podem ser colocados em Fila pela sua aplicação ou executados de forma síncrona dentro do ciclo de vida da requisição atual. Jobs que são executados de forma síncrona durante a requisição atual são às vezes chamados de "commands" já que são uma implementação do <a href="https://en.wikipedia.org/wiki/Command_pattern" target="_blank">padrão de comando</a>.
+Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:job` do Artisan. O diretório `Jobs` abriga os <a href="/conhecendo-mais/filas" target="_blank">jobs</a> para a sua aplicação. Jobs podem ser colocados em Fila pela sua aplicação ou executados de forma síncrona dentro do ciclo de vida da requisição atual. Jobs que são executados de forma síncrona durante a requisição atual são às vezes chamados de "commands" já que são uma implementação do <a href="https://en.wikipedia.org/wiki/Command_pattern" target="_blank">padrão de comando</a>.
 
 ### O Diretório `Listeners`
 
-Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:listener` do Artisan. O diretório `Listeners` contém as classes que lidam com seus <a href="/explorando-mais-a-fundo/eventos" target="_blank">eventos</a>. Os listeners de eventos recebem uma instância de evento e executam lógica em resposta ao evento ser disparado. Por exemplo, um evento `UserRegistered` pode ser tratado por um listener `SendWelcomeEmail`.
+Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:listener` do Artisan. O diretório `Listeners` contém as classes que lidam com seus <a href="/conhecendo-mais/eventos" target="_blank">eventos</a>. Os listeners de eventos recebem uma instância de evento e executam lógica em resposta ao evento ser disparado. Por exemplo, um evento `UserRegistered` pode ser tratado por um listener `SendWelcomeEmail`.
 
 ### O Diretório `Mail`
 
-Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:mail` do Artisan. O diretório `Mail` contém todas as suas <a href="/explorando-mais-a-fundo/emails" target="_blank">classes que representam emails</a> enviados pela sua aplicação. Objetos de email permitem encapsular toda a lógica de construção de um email em uma única classe simples que pode ser enviada usando o método `Mail::send`.
+Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:mail` do Artisan. O diretório `Mail` contém todas as suas <a href="/conhecendo-mais/emails" target="_blank">classes que representam emails</a> enviados pela sua aplicação. Objetos de email permitem encapsular toda a lógica de construção de um email em uma única classe simples que pode ser enviada usando o método `Mail::send`.
 
 ### O Diretório `Models`
 
@@ -112,7 +112,7 @@ O diretório `Models` contém todas as suas <a href="/eloquent-orm/introducao" t
 
 ### O Diretório `Notifications`
 
-Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:notification` do Artisan. O diretório `Notifications` contém todas as suas <a href="/explorando-mais-a-fundo/notificacoes" target="_blank">classes de notificação</a> "transacionais" que são enviadas pela sua aplicação, como notificações simples sobre eventos que acontecem dentro da sua aplicação. O recurso de notificação do Laravel abstrai o envio de notificações por uma variedade de drivers, como email, Slack, SMS ou armazenamento em um banco de dados.
+Esse diretório não existe por padrão, mas será criado para você se você executar o comando `make:notification` do Artisan. O diretório `Notifications` contém todas as suas <a href="/conhecendo-mais/notificacoes" target="_blank">classes de notificação</a> "transacionais" que são enviadas pela sua aplicação, como notificações simples sobre eventos que acontecem dentro da sua aplicação. O recurso de notificação do Laravel abstrai o envio de notificações por uma variedade de drivers, como email, Slack, SMS ou armazenamento em um banco de dados.
 
 ### O Diretório `Policies`
 
