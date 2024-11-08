@@ -12,7 +12,7 @@ hero:
 
     - theme: alt
       text: Contribua com a tradução
-      link: /
+      link: https://github.com/docsbrasil/laravel-docsbrasil
   image:
     src: /logo_laravel.webp
     alt: Laravel Brasil

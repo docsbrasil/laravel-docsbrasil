@@ -3,8 +3,8 @@ import { sidebar, socialLinks, outline, nav } from "./src/config/";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Docs Brasil",
-  description: "A laravel pt_BR docs",
+  title: "Docs Brasil - Laravel",
+  description: "A documentação do Laravel traduzida para o português do Brasil",
   cleanUrls: true,
   appearance: "force-dark",
   ignoreDeadLinks: true,

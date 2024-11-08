@@ -38,7 +38,7 @@ Uma vez que a aplicação foi inicializada e todos os service providers foram re
 
 Os middlewares fornecem um mecanismo conveniente para filtrar ou examinar as requisições HTTP que entram na sua aplicação. Por exemplo, o Laravel inclui um middleware que verifica se o usuário da sua aplicação está autenticado. Se o usuário não estiver autenticado, o middleware redirecionará o usuário para a tela de login. No entanto, se o usuário estiver autenticado, o middleware permitirá que a requisição prossiga mais adiante na aplicação. Alguns middlewares são atribuídos a todas as rotas dentro da aplicação, como `PreventRequestsDuringMaintenance`, enquanto outros são atribuídos apenas a rotas ou grupos de rotas específicos. Você pode aprender mais sobre middlewares lendo a documentação completa sobre <a href="/fundamentos/middleware" target="_blank">middlewares</a>.
 
-Se a requisição passar por todos os middlewares atribuídos à rota, o método da rota ou do controlador será executado. Em seguida, a resposta será retornada pela mesma sequência de middlewares.
+Se a requisição passar por todos os middlewares atribuídos à rota, o método da rota ou do controller será executado. Em seguida, a resposta será retornada pela mesma sequência de middlewares.
 
 ### Finalizando
 

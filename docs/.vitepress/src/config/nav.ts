@@ -1,6 +1,6 @@
 export const nav = [
   { 
     text: "Apoie o Projeto", 
-    link: "/" 
+    link: "https://github.com/docsbrasil/laravel-docsbrasil" 
   },
 ];

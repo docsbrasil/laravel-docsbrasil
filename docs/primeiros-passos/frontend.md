@@ -98,9 +98,9 @@ Além disso, os desenvolvedores são deixados mantendo dois repositórios de có
 
 ### Inertia
 
-Felizmente, o Laravel oferece o melhor dos dois mundos. <a href="https://inertiajs.com" target="_blank">Inertia</a> preenche a lacuna entre sua aplicação Laravel e seu frontend moderno Vue ou React, permitindo que você construa frontends modernos completos usando Vue ou React enquanto aproveita as rotas e controladores do Laravel para roteamento, hidratação de dados e autenticação - tudo dentro de um único repositório de código. Com essa abordagem, você pode desfrutar de todo o poder do Laravel e do Vue / React sem prejudicar as capacidades de qualquer uma das ferramentas.
+Felizmente, o Laravel oferece o melhor dos dois mundos. <a href="https://inertiajs.com" target="_blank">Inertia</a> preenche a lacuna entre sua aplicação Laravel e seu frontend moderno Vue ou React, permitindo que você construa frontends modernos completos usando Vue ou React enquanto aproveita as rotas e controllers do Laravel para roteamento, hidratação de dados e autenticação - tudo dentro de um único repositório de código. Com essa abordagem, você pode desfrutar de todo o poder do Laravel e do Vue / React sem prejudicar as capacidades de qualquer uma das ferramentas.
 
-Depois de instalar o Inertia em sua aplicação Laravel, você escreverá rotas e controladores como de costume. No entanto, em vez de retornar um template Blade de seu controlador, você retornará uma página Inertia:
+Depois de instalar o Inertia em sua aplicação Laravel, você escreverá rotas e controllers como de costume. No entanto, em vez de retornar um template Blade de seu controller, você retornará uma página Inertia:
 
 ```php
 <?php

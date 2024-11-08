@@ -1,4 +1,6 @@
-# Dev Docs Brasil - Laravel
+# Docs Brasil - Laravel
+
+[Link](https://laravel.docsbrasil.dev/)
 
 Esse projeto contém a tradução da documentação do Laravel para o português.
 
