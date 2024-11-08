@@ -2,8 +2,8 @@ export const diggingDeeperLinks = {
   text: "Conhecendo mais (WIP)",
   items: [
     {
-      text: "Console Artisan",
-      link: "/conhecendo-mais/console-artisan",
+      text: "Artisan",
+      link: "/conhecendo-mais/artisan",
     },
     {
       text: "Broadcasting",
