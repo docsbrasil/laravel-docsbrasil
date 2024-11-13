@@ -1,7 +1,7 @@
 # Controllers
 
 ::: info
-Por que não traduzimos "Controller" para "Controlador"? Porque a palavra "Controller" já é amplamente utilizada no contexto de desenvolvimento de software e é um termo técnico.
+Por que não traduzimos "Controller" para "Controlador"? Porque a palavra "Controller" já é amplamente utilizada no contexto de desenvolvimento de software e é um termo técnico. Buscamos manter a terminologia original para facilitar a compreensão.
 :::
 
 ## Introdução
@@ -270,7 +270,7 @@ Route::resource('photos', PhotoController::class)->withTrashed(['show']);
 
 #### Especificando o Model do Resource
 
-Se você estiver utilizando <a href="/fundamentos/routing#route-model-binding" target="_blank">route model binding</a> e gostaria que os métodos do <em>resource controller</em> façam type-hint de uma instância de model, você pode usar a opção `--model` ao gerar o controller:
+Se você estiver utilizando <a href="/fundamentos/routing#route-model-binding" target="_blank">route model binding</a> e gostaria que os métodos do <em>resource controller</em> recebessem uma instância de model, você pode usar a opção `--model` ao gerar o controller:
 
 ```shell
 php artisan make:controller PhotoController --model=Photo --resource
@@ -518,7 +518,7 @@ Route::resource('photos', PhotoController::class);
 
 ::: tip
 Lembre-se de manter seus controllers focados. Se você se encontrar rotineiramente precisando de métodos fora do conjunto típico de 
-ações, considere dividir seu controller em dois, controllers menores.
+ações, considere dividir seu controller em dois controllers menores.
 :::
 
 ### Singleton Resource Controllers

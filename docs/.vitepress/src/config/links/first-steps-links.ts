@@ -2,6 +2,10 @@ export const firstStepsLinks = {
   text: "Primeiros passos",
   items: [
     {
+      text: "Importante",
+      link: "/primeiros-passos/importante",
+    },
+    {
       text: "Instalação",
       link: "/primeiros-passos/instalacao",
     },
