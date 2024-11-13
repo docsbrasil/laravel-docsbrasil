@@ -1,4 +1,4 @@
-# HTTP Requests
+# HTTP Requests (Requisições HTTP)
 
 ## Introdução
 
@@ -739,7 +739,7 @@ Se você estiver utilizando a Amazon AWS ou outro provedor de balanceador de car
 })
 ```
 
-## Configurando hosts confiáveis
+## Configurando Hosts confiáveis
 
 Por padrão, o Laravel responderá a todas as requisições que receber, independentemente do conteúdo do cabeçalho `Host` da requisição HTTP. Além disso, o valor do cabeçalho `Host` será usado ao gerar URLs absolutos para sua aplicação durante uma requisição web.
 
@@ -768,3 +768,4 @@ Se você precisar acessar os arquivos de configuração ou o banco de dados de s
     $middleware->trustHosts(at: fn () => config('app.trusted_hosts'));
 })
 ```
+

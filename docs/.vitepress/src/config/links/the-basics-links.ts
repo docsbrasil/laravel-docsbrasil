@@ -18,11 +18,11 @@ export const theBasicsLinks = {
       link: "/fundamentos/controllers",
     },
     {
-      text: "Requests",
+      text: "Requisições HTTP",
       link: "/fundamentos/requests",
     },
     {
-      text: "Responses",
+      text: "Respostas HTTP",
       link: "/fundamentos/responses",
     },
     {
