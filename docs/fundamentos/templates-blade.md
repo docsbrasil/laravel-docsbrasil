@@ -56,12 +56,12 @@ Entidades HTML são caracteres especiais que têm um significado especial em HTM
 
 ```php
 <?php
- 
+
 namespace App\Providers;
- 
+
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
- 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -76,7 +76,7 @@ class AppServiceProvider extends ServiceProvider
 
 #### Exibindo Dados Não Escapados
 
-Por padrão, as declarações Blade <code v-pre>{{ }}</code> são automaticamente processadas pela função `htmlspecialchars` do PHP para prevenir ataques XSS. Se você não deseja que seus   sejam escapados, você pode usar a seguinte sintaxe:
+Por padrão, as declarações Blade <code v-pre>{{ }}</code> são automaticamente processadas pela função `htmlspecialchars` do PHP para prevenir ataques XSS. Se você não deseja que seus sejam escapados, você pode usar a seguinte sintaxe:
 
 ```blade
 Hello, {!! $name !!}.
@@ -230,7 +230,7 @@ Ou, você pode determinar se a aplicação está rodando em um ambiente específ
 @env('staging')
     // A aplicação está rodando em "staging"...
 @endenv
- 
+
 @env(['staging', 'production'])
     // A aplicação está rodando em "staging" ou "production"...
 @endenv
@@ -249,7 +249,7 @@ Não confunda com a diretiva `@session`, utilizada verificar se um valor existe 
     <div class="pull-right">
         @yield('navigation')
     </div>
- 
+
     <div class="clearfix"></div>
 @endif
 ```
@@ -285,11 +285,11 @@ Complementando as declarações condicionais, você pode construir declarações
     @case(1)
         Primeiro caso...
         @break
- 
+
     @case(2)
         Segundo caso...
         @break
- 
+
     @default
         Caso padrão...
 @endswitch
@@ -303,17 +303,17 @@ Complementando as declarações condicionais, o Blade fornece diretivas simples 
 @for ($i = 0; $i < 10; $i++)
     O valor atual é {{ $i }}
 @endfor
- 
+
 @foreach ($users as $user)
     <p>Este é o usuário {{ $user->id }}</p>
 @endforeach
- 
+
 @forelse ($users as $user)
-    <li>{{ $user->name }}</li>    
+    <li>{{ $user->name }}</li>
 @empty
     <p>Sem usuários</p>
 @endforelse
- 
+
 @while (true)
     <p>Sou um loop infinito.</p>
 @endwhile
@@ -330,9 +330,9 @@ Ao usar loops, você também pode pular a iteração atual ou encerrar o loop us
     @if ($user->type == 1)
         @continue
     @endif
- 
+
     <li>{{ $user->name }}</li>
- 
+
     @if ($user->number == 5)
         @break
     @endif
@@ -341,13 +341,12 @@ Ao usar loops, você também pode pular a iteração atual ou encerrar o loop us
 
 Você pode também incluir a condição de continuação ou interrupção na declaração dessas diretivas, tornando o código mais limpo:
 
-
 ```blade
 @foreach ($users as $user)
     @continue($user->type == 1)
- 
+
     <li>{{ $user->name }}</li>
- 
+
     @break($user->number == 5)
 @endforeach
 ```
@@ -361,11 +360,11 @@ Enquanto itera por um loop `foreach`, uma variável `$loop` estará disponível 
     @if ($loop->first)
         Esta é a primeira iteração.
     @endif
- 
+
     @if ($loop->last)
         Esta é a última iteração.
     @endif
- 
+
     <p>Este é o usuário {{ $user->id }}</p>
 @endforeach
 ```
@@ -429,8 +428,6 @@ A variável `$loop` também contém uma variedade de outras propriedades úteis:
       <td>O nível de aninhamento do loop atual.</td>
     </tr>
     <tr>
-      <td><code>$loop-&gt;parent</code></td>
-      <td>When in a nested loop, the parent's loop variable.</td>
       <td><code>$loop->parent</code></td>
       <td>Quando em um loop aninhado, acessa a variável de loop do pai.</td>
     </tr>
@@ -446,14 +443,14 @@ A diretiva `@class` compila condicionalmente uma string de classes CSS. A direti
     $isActive = false;
     $hasError = true;
 @endphp
- 
+
 <span @class([
     'p-4',
     'font-bold' => $isActive,
     'text-gray-500' => ! $isActive,
     'bg-red' => $hasError,
 ])></span>
- 
+
 <span class="p-4 text-gray-500 bg-red"></span>
 ```
 
@@ -463,12 +460,12 @@ Da mesma forma, a diretiva `@style` pode ser utilizada para adicionar condiciona
 @php
     $isActive = true;
 @endphp
- 
+
 <span @style([
     'background-color: red',
     'font-weight: bold' => $isActive,
 ])></span>
- 
+
 <span style="background-color: red; font-weight: bold;"></span>
 ```
 
@@ -477,7 +474,7 @@ Da mesma forma, a diretiva `@style` pode ser utilizada para adicionar condiciona
 Para facilitar, você pode utilizar a diretiva `@checked` para indicar facilmente se um checkbox HTML fornecido está "marcado". Esta diretiva irá exibir `checked` se a condição fornecida for verdadeira:
 
 ```blade
-<input type="checkbox" name="active" value="active" 
+<input type="checkbox" name="active" value="active"
   @checked(old('active') == $user->active)>
 ```
 
@@ -532,7 +529,7 @@ A diretiva `@include` do Blade permite que você inclua uma view Blade de dentro
 ```blade
 <div>
     @include('shared.errors')
- 
+
     <form>
         <!-- Form Contents -->
     </form>
@@ -555,7 +552,7 @@ Se você deseja utilizar `@include` uma view se uma determinada expressão boole
 
 ```blade
 @includeWhen($boolean, 'view.name', ['status' => 'complete'])
- 
+
 @includeUnless($boolean, 'view.name', ['status' => 'complete'])
 ```
 
@@ -593,7 +590,7 @@ As views renderizadas via `@each` não herdam as variáveis da view pai. Se a vi
 
 A diretiva `@once` permite que você defina uma parte do template que será avaliada apenas uma vez por ciclo de renderização. Isso pode ser útil para "empurrar" uma determinada parte do JavaScript para o cabeçalho da página utilizando [stacks](#stacks). Por exemplo, se você estiver renderizando um determinado [componente](#componentes) dentro de um loop, você pode desejar que esse componente seja renderizado apenas uma vez dentro do cabeçalho da página:
 
-```
+````
 @once
     @push('scripts')
         <script>
@@ -610,7 +607,7 @@ Uma vez que a diretiva `@once` é frequentemente usada em conjunto com as direti
         // Seu JavaScript personalizado...
     </script>
 @endPushOnce
-```
+````
 
 ### PHP Puro
 
@@ -678,7 +675,7 @@ No entanto, se você estiver construindo um pacote que utiliza componentes Blade
 
 ```php
 use Illuminate\Support\Facades\Blade;
- 
+
 /**
  * Bootstrap your package's services.
  */
@@ -698,7 +695,7 @@ Como alternativa, você pode utilizar o método `componentNamespace` para carreg
 
 ```php
 use Illuminate\Support\Facades\Blade;
- 
+
 /**
  * Bootstrap your package's services.
  */
@@ -709,7 +706,6 @@ public function boot(): void
 ```
 
 Isso permitirá que você utilize componentes de pacotes usando o namespace específico do pacote. Você pode acessar esses componentes com a seguinte sintaxe `nome-do-pacote::`:
-
 
 ```blade
 <x-nightshade::calendar />
@@ -738,7 +734,7 @@ Se você deseja renderizar condicionalmente seu componente, você pode definir u
 
 ```php
 use Illuminate\Support\Str;
- 
+
 /**
  * Whether the component should be rendered
  */
@@ -779,12 +775,12 @@ Você deve definir todos os atributos de dados do componente no construtor da su
 
 ```php
 <?php
- 
+
 namespace App\View\Components;
- 
+
 use Illuminate\View\Component;
 use Illuminate\View\View;
- 
+
 class Alert extends Component
 {
     /**
@@ -794,7 +790,7 @@ class Alert extends Component
         public string $type, // Poderá ser acessada como {{ $type }} na view
         public string $message, // Poderá ser acessada como {{ $message }} na view
     ) {}
- 
+
     /**
      * Retorna a view que representa o componente.
      */
@@ -823,7 +819,7 @@ Os argumentos do construtor do componente devem ser especificados usando `camelC
  */
 public function __construct(
     public string $alertType,
-) {}  
+) {}
 ```
 
 O argumento `$alertType` pode ser fornecido ao componente da seguinte forma:
@@ -890,7 +886,7 @@ Os componentes Blade também permitem que você acesse o nome do componente, atr
 
 ```php
 use Closure;
- 
+
 /**
  * Retorna a view / conteúdo que representa o componente.
  */
@@ -928,7 +924,7 @@ Se o seu componente requer dependências do <a href="/conceitos-de-arquitetura/s
 
 ```php
 use App\Services\AlertCreator;
- 
+
 /**
  * Create the component instance.
  */
@@ -945,11 +941,11 @@ Se você deseja impedir que alguns métodos ou propriedades públicas sejam expo
 
 ```php
 <?php
- 
+
 namespace App\View\Components;
- 
+
 use Illuminate\View\Component;
- 
+
 class Alert extends Component
 {
     /**
@@ -958,7 +954,7 @@ class Alert extends Component
      * @var array
      */
     protected $except = ['type'];
- 
+
     /**
      * Create the component instance.
      */
@@ -992,7 +988,7 @@ O uso de diretivas como `@env` dentro das tags de componentes não é suportado 
 
 Se você deseja mesclar um atributo específico com um valor adicional, você pode utilizar o método `merge` do <em>attribute bag</em>. Este método é particularmente útil para definir um conjunto de classes CSS padrão que devem sempre ser aplicadas a um componente:
 
-```blade
+````blade
 <div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}>
     {{ $message }}
 </div>
@@ -1001,7 +997,7 @@ Se assumirmos que este componente é utilizado da seguinte forma:
 
 ```blade
 <x-alert type="error" :message="$message" class="mb-4"/>
-```
+````
 
 O HTML final renderizado do componente será semelhante ao seguinte:
 
@@ -1077,7 +1073,6 @@ Você pode filtrar atributos utilizando o método `filter`. Este método aceita 
 
 Para facilitar, você pode utilizar o método `whereStartsWith` para recuperar todos os atributos que começam com uma determinada string:
 
-
 ```blade
 {{ $attributes->whereStartsWith('wire:model') }}
 ```
@@ -1098,7 +1093,7 @@ Se você deseja verificar se um atributo está presente no componente, você pod
 
 ```blade
 @if ($attributes->has('class'))
-    <div>Class attribute is present</div>
+    <div>O atributo "classe" está presente</div>
 @endif
 ```
 
@@ -1106,7 +1101,7 @@ Se um array for passado para o método `has`, o método determinará se todos os
 
 ```blade
 @if ($attributes->has(['name', 'class']))
-    <div>All of the attributes are present</div>
+    <div>Todos os atributos estão presentes</div>
 @endif
 ```
 
@@ -1114,7 +1109,7 @@ O método `hasAny` pode ser utilizado para determinar se algum dos atributos for
 
 ```blade
 @if ($attributes->hasAny(['href', ':href', 'v-bind:href']))
-    <div>One of the attributes is present</div>
+    <div>Um dos atributos está presente</div>
 @endif
 ```
 
@@ -1160,9 +1155,9 @@ Podemos passar conteúdo para o `slot` injetando conteúdo no componente:
 
 ```blade
 <!-- /resources/views/components/alert.blade.php -->
- 
+
 <span class="alert-title">{{ $title }}</span>
- 
+
 <div class="alert alert-danger">
     {{ $slot }}
 </div>
@@ -1175,7 +1170,7 @@ Você pode definir o conteúdo do slot nomeado utilizando a tag `x-slot`. Qualqu
     <x-slot:title>
         Server Error
     </x-slot>
- 
+
     <strong>Whoops!</strong> Something went wrong!
 </x-alert>
 ```
@@ -1184,7 +1179,7 @@ Você pode utilizar o método `isEmpty` para determinar se o slot contém conte�
 
 ```blade
 <span class="alert-title">{{ $title }}</span>
- 
+
 <div class="alert alert-danger">
     @if ($slot->isEmpty())
         <span>Este é o conteúdo padrão se o slot estiver vazio.</span>
@@ -1211,7 +1206,7 @@ Se você já utilizou algum framework JavaScript como o Vue, você pode estar fa
     <x-slot:title>
         {{ $component->formatAlert('Server Error') }}
     </x-slot>
- 
+
     <strong>Whoops!</strong> Something went wrong!
 </x-alert>
 ```
@@ -1241,14 +1236,14 @@ Para interagir com os atributos do slot, você pode acessar a propriedade `attri
     'heading',
     'footer',
 ])
- 
+
 <div {{ $attributes->class(['border']) }}>
     <h1 {{ $heading->attributes->class(['text-lg']) }}>
         {{ $heading }}
     </h1>
- 
+
     {{ $slot }}
- 
+
     <footer {{ $footer->attributes->class(['text-gray-700']) }}>
         {{ $footer }}
     </footer>
@@ -1304,7 +1299,7 @@ No entanto, se você estiver construindo um pacote que utiliza componentes Blade
 ```php
 use Illuminate\Support\Facades\Blade;
 use VendorPackage\View\Components\AlertComponent;
- 
+
 /**
  * Bootstrap your package's services.
  */
@@ -1387,3 +1382,545 @@ Felizmente, o Blade permite que você coloque um arquivo que corresponda ao nome
 /resources/views/components/accordion/item.blade.php
 ```
 
+### Passando dados e Atributos
+
+Como os componentes anônimos não têm uma classe associada, você pode se perguntar como diferenciar quais dados devem ser passados para o componente como variáveis e quais atributos devem ser colocados no [attribute bag](#atributos-de-componentes) do componente.
+
+Você pode especificar quais atributos devem ser considerados variáveis utilizando a diretiva `@props` no topo do template Blade do seu componente. Todos os outros atributos no componente estarão disponíveis via <em>attribute bag</em>. Se você deseja dar a uma variável um valor padrão, você pode especificar o nome da variável como a chave do array e o valor padrão como o valor do array:
+
+```blade
+<!-- /resources/views/components/alert.blade.php -->
+
+@props(['type' => 'info', 'message'])
+
+<div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}>
+    {{ $message }}
+</div>
+```
+
+Dada a definição do componente acima, podemos renderizar o componente da seguinte forma:
+
+```blade
+<x-alert type="error" :message="$message" class="mb-4"/>
+```
+
+### Acessando Dados do Componente Pai
+
+Às vezes, você pode querer acessar dados de um componente pai dentro de um componente filho. Nestes casos, você pode utilizar a diretiva `@aware`. Por exemplo, imagine que estamos construindo um componente de menu complexo composto por um componente pai `<x-menu>` e um componente filho `<x-menu.item>`:
+
+```blade
+<x-menu color="purple">
+    <x-menu.item>...</x-menu.item>
+    <x-menu.item>...</x-menu.item>
+</x-menu>
+```
+
+O componente `<x-menu>` pode ter uma implementação como a seguinte:
+
+```blade
+<!-- /resources/views/components/menu/index.blade.php -->
+
+@props(['color' => 'gray'])
+
+<ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}>
+    {{ $slot }}
+</ul>
+```
+
+Como a propriedade `color` foi passada apenas para o componente pai (`<x-menu>`), ela não estará disponível dentro de `<x-menu.item>`. No entanto, se utilizarmos a diretiva `@aware`, podemos torná-la disponível dentro de `<x-menu.item>` também:
+
+```blade
+<!-- /resources/views/components/menu/item.blade.php -->
+
+@aware(['color' => 'gray'])
+
+<li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}>
+    {{ $slot }}
+</li>
+```
+
+::: danger
+A diretiva `@aware` só consegue acessar dados do componente pai que foram explicitamente passados para ele como atributos HTML. Valores padrão definidos em `@props`, mas que não foram passados diretamente para o componente pai, não estarão disponíveis para a diretiva `@aware`.
+:::
+
+### Caminhos de Componentes Anônimos
+
+Componentes anônimos são tipicamente definidos colocando um template Blade dentro do diretório `resources/views/components`. No entanto, você pode querer registrar outros caminhos de componentes além do caminho padrão.
+
+O método `anonymousComponentPath` aceita o "caminho" para a localização do componente como seu primeiro argumento e um "namespace" opcional que os componentes devem ser colocados como seu segundo argumento. Tipicamente, este método deve ser chamado a partir do método `boot` de um dos <a href="/conceitos-de-arquitetura/service-provider" target="_blank">service providers</a> da sua aplicação:
+
+```php
+/**
+ * Bootstrap any application services.
+ */
+public function boot(): void
+{
+    Blade::anonymousComponentPath(__DIR__.'/../components');
+}
+```
+
+Quando um novo caminho de componentes é registrado sem um prefixo específico como no exemplo acima, eles podem ser renderizados nos seus componentes sem um prefixo também. Por exemplo, se um componente `panel.blade.php` existir no caminho registrado acima, ele pode ser renderizado da seguinte forma:
+
+```blade
+<x-panel />
+```
+
+Prefixos "namespaces" podem ser fornecidos como o segundo argumento para o método `anonymousComponentPath`:
+
+```php
+Blade::anonymousComponentPath(__DIR__.'/../components', 'dashboard');
+```
+
+Quando um prefixo é fornecido, os componentes dentro desse "namespace" podem ser renderizados prefixando o namespace do componente ao nome do componente:
+
+```blade
+<x-dashboard::panel />
+```
+
+## Construindo Layouts
+
+### Layouts Utilizando Componentes
+
+A maioria das aplicações web mantém o mesmo layout geral em várias páginas. É trabalhoso manter uma aplicação se tivermos que repetir todo o HTML do layout em cada view que criamos. Felizmente, é conveniente definir este layout como um único [componente Blade](#componentes) e então utilizá-lo em toda a nossa aplicação.
+
+#### Definindo o Componente de Layout
+
+Por exemplo, imagine que estamos construindo uma aplicação de lista de tarefas. Poderíamos definir um componente `layout` que se parece com o seguinte:
+
+```blade
+<!-- resources/views/components/layout.blade.php -->
+
+<html>
+    <head>
+        <title>{{ $title ?? 'Todo Manager' }}</title>
+    </head>
+    <body>
+        <h1>Todos</h1>
+        <hr/>
+        {{ $slot }}
+    </body>
+</html>
+```
+
+#### Utilizando o Componente de Layout
+
+Uma vez que o componente `layout` foi definido, podemos criar uma view Blade que utiliza o componente. Neste exemplo, vamos definir uma view simples que exibe nossa lista de tarefas:
+
+```blade
+<!-- resources/views/tasks.blade.php -->
+
+<x-layout>
+    @foreach ($tasks as $task)
+        <div>{{ $task }}</div>
+    @endforeach
+</x-layout>
+```
+
+Lembre-se, o conteúdo que é injetado em um componente será atribuído à variável padrão `$slot` dentro do nosso componente `layout`. Como você pode ter notado, nosso `layout` também contém um slot `$title` se o mesmo for fornecido; caso contrário, um título padrão é exibido. Podemos injetar um título personalizado da nossa view de lista de tarefas utilizando a sintaxe de slot padrão discutida na [documentação de componentes](#componentes):
+
+```blade
+<!-- resources/views/tasks.blade.php -->
+
+<x-layout>
+    <x-slot:title>
+        Custom Title
+    </x-slot>
+
+    @foreach ($tasks as $task)
+        <div>{{ $task }}</div>
+    @endforeach
+</x-layout>
+```
+
+Agora que definimos nosso layout e views de lista de tarefas, só precisamos retornar a view `task`:
+
+```php
+use App\Models\Task;
+
+Route::get('/tasks', function () {
+    return view('tasks', ['tasks' => Task::all()]);
+});
+```
+
+### Layouts Utilizando Herança de Templates
+
+Layouts também podem ser criados via "herança de templates". Esta já foi a principal forma de construir aplicações antes da introdução de [componentes](#componentes).
+
+Para começar, vamos dar uma olhada em um exemplo simples. Primeiro, vamos examinar um layout de página. Como a maioria das aplicações web mantém o mesmo layout geral em várias páginas, é conveniente definir este layout como uma única view Blade:
+
+```blade
+<!-- resources/views/layouts/app.blade.php -->
+
+<html>
+    <head>
+        <title>App Name - @yield('title')</title>
+    </head>
+    <body>
+        @section('sidebar')
+            Esta é a barra lateral principal.
+        @show
+
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
+```
+
+Como você pode ver, este arquivo contém marcação HTML típica. No entanto, observe as diretivas `@section` e `@yield`. A diretiva `@section`,como o nome sugere, define uma seção de conteúdo, enquanto a diretiva `@yield` é utilizada para exibir o conteúdo de uma determinada seção.
+
+Agora que definimos um layout para nossa aplicação, vamos definir uma página filha que herda o layout.
+
+#### Estendendo um Layout
+
+Ao definir uma view filha, utilize a diretiva `@extends` do Blade para especificar qual layout a view filha deve "herdar". Views que estendem um layout Blade podem injetar conteúdo nas seções do layout utilizando diretivas `@section`. Lembre-se, como visto no exemplo acima, o conteúdo destas seções será exibido no layout utilizando `@yield`:
+
+```blade
+<!-- resources/views/child.blade.php -->
+
+@extends('layouts.app')
+
+@section('title', 'Título da Página')
+
+@section('sidebar')
+    @parent
+
+    <p>Este é um texto adicionado à barra lateral principal.</p>
+@endsection
+
+@section('content')
+    <p>Este é o conteúdo do corpo da página.</p>
+@endsection
+```
+
+Neste exemplo, a seção `sidebar` está utilizando a diretiva `@parent` para anexar (em vez de sobrescrever) o conteúdo da barra lateral do layout. A diretiva `@parent` será substituída pelo conteúdo do layout quando a view for renderizada.
+
+::: tip
+Ao contrário do exemplo anterior, esta seção `sidebar` termina com `@endsection` em vez de `@show`. A diretiva `@endsection` apenas define uma seção, enquanto `@show` define e **imediatamente exibe** a seção.
+:::
+
+A diretiva `@yield` também aceita um valor padrão como seu segundo parâmetro. Este valor será renderizado se a seção que está sendo exibida não estiver definida:
+
+```blade
+@yield('content', 'Conteúdo padrão')
+```
+
+## Formulários
+
+### Campo CSFR
+
+Sempre que você definir um formulário HTML em sua aplicação, você deve incluir um campo de token CSRF oculto no formulário para que
+<a href="/fundamentos/protecao-csrf" target="_blank">a proteção CSRF</a> possa validar a requisição. Você pode utilizar a diretiva
+`@csrf` para gerar o campo necessário:
+
+```blade
+<form method="POST" action="/profile">
+    @csrf
+
+    ...
+</form>
+```
+
+### Campos de Métodos HTTP
+
+Formulários HTML não podem fazer requisições `PUT`, `PATCH` ou `DELETE`, então você precisará adicionar um campo `_method` oculto para
+simular esses verbos HTTP. A diretiva `@method` pode criar este campo para você:
+
+```blade
+<form action="/foo/bar" method="POST">
+    @method('PUT')
+
+    ...
+</form>
+```
+
+### Erros de Validação
+
+A diretiva `@error` pode ser utilizada para verificar rapidamente se existem <a href="/fundamentos/validacao" target="_blank">mensagens de erros de 
+validação</a> para um determinado atributo. Dentro de uma diretiva `@error`, você pode imprimir a variável `$message` para exibir 
+a mensagem de erro:
+
+```blade
+<!-- /resources/views/post/create.blade.php -->
+
+<label for="title">Post Title</label>
+
+<input
+    id="title"
+    type="text"
+    class="@error('title') is-invalid @enderror"
+/>
+
+@error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+```
+
+Como a diretiva `@error` compila para uma instrução "if", você pode utilizar a diretiva `@else` para renderizar conteúdo quando não
+houver um erro para um atributo:
+
+```blade
+<!-- /resources/views/auth.blade.php -->
+
+<label for="email">Email address</label>
+
+<input
+    id="email"
+    type="email"
+    class="@error('email') is-invalid @else is-valid @enderror"
+/>
+```
+
+Você pode passar <a href="/fundamentos/validacao" target="_blank">o nome de uma "bag" de erros específica</a> como o segundo parâmetro para a diretiva 
+`@error` para recuperar mensagens de erro de validação em páginas contendo múltiplos formulários:
+
+```blade
+<!-- /resources/views/auth.blade.php -->
+
+<label for="email">Email address</label>
+
+<input
+    id="email"
+    type="email"
+    class="@error('email', 'login') is-invalid @enderror"
+/>
+
+@error('email', 'login')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+```
+
+## Stacks
+
+O Blade permite adicionar conteúdo a "pilhas nomeadas" (stacks), que podem ser renderizadas em uma parte diferente de outra view 
+ou layout. Isso é especialmente útil para declarar bibliotecas JavaScript necessárias pelas views filhas.
+
+```blade
+@push('scripts')
+    <script src="/example.js"></script>
+@endpush
+```
+
+Se você deseja adicionar o conteúdo a uma stack se uma determinada expressão booleana for `true`, você pode utilizar a diretiva `@pushIf`:
+
+```blade
+@pushIf($shouldPush, 'scripts')
+    <script src="/example.js"></script>
+@endPushIf
+```
+
+Você pode adicionar conteúdo a uma stack quantas vezes forem necessárias. Para renderizar o conteúdo completo da stack, passe o 
+nome da stack para a diretiva `@stack`:
+
+```blade
+<head>
+    <!-- Restante do conteúdo do cabeçalho -->
+ 
+    @stack('scripts')
+</head>
+```
+
+## Injeção de Serviços
+
+A diretiva `@inject` pode ser utilizada para recuperar um serviço do 
+<a href="/conceitos-de-arquitetura/service-contaier" target="_blank">service container</a>. O primeiro argumento passado para `@inject` 
+é o nome da variável na qual o serviço será colocado, enquanto o segundo argumento é o nome da classe ou interface que você deseja 
+recuperar:
+
+```blade
+@inject('metrics', 'App\Services\MetricsService')
+ 
+<div>
+    Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
+</div>
+```
+
+## Renderizando Templates Blade Em Linha (Inline)
+
+Às vezes, você pode precisar transformar uma string de Template Blade em um HTML válido. Você pode fazer isso utilizando o método `render` 
+fornecido pela facade `Blade`. O método `render` aceita a string de um Template Blade e um array opcional de dados para fornecer 
+ao template:
+
+```php
+use Illuminate\Support\Facades\Blade;
+ 
+return Blade::render('Hello, {{ $name }}', ['name' => 'Julian Bashir']);
+```
+
+O Laravel renderiza templates Blade em linha armazenanado arquivos temporários no diretório `storage/framework/views`. Se você deseja que 
+o Laravel remova esses arquivos temporários após renderizar o template Blade, você pode passar o argumento `deleteCachedView` ao método:
+
+```php
+return Blade::render(
+    'Hello, {{ $name }}',
+    ['name' => 'Julian Bashir'],
+    deleteCachedView: true
+);
+```
+
+## Renderizando Fragmentos de Templates Blade
+
+Ao utilizar frameworks frontend como <a href="https://turbo.hotwired.dev/" target="_blank">Turbo</a> e 
+<a href="https://htmx.org/" target="_blank">htmx</a>, você pode ocasionalmente precisar retornar apenas uma parte de um 
+Template Blade dentro da sua resposta HTTP. Os "fragmentos" Blade permitem que você faça exatamente isso. Para começar, coloque uma parte 
+do seu template Blade dentro das diretivas `@fragment` e `@endfragment`:
+
+::: tip
+Imagine o fragmento como um "pedaço" de um template Blade que você deseja retornar em uma <a href="/fundamentos/responses" target="_blank">resposta HTTP</a>.
+:::
+
+```blade
+@fragment('user-list')
+    <ul>
+        @foreach ($users as $user)
+            <li>{{ $user->name }}</li>
+        @endforeach
+    </ul>
+@endfragment
+```
+
+Então, ao renderizar a view que utiliza este template, você pode invocar o método `fragment` para especificar que apenas o fragmento
+especificado deve ser incluído na resposta HTTP:
+
+```php
+return view('dashboard', ['users' => $users])->fragment('user-list');
+```
+
+O método `fragmentIf` permite que você retorne condicionalmente um fragmento de uma view com base em uma determinada condição. 
+Caso contrário, a view inteira será retornada:
+
+```php
+return view('dashboard', ['users' => $users])
+    ->fragmentIf($request->hasHeader('HX-Request'), 'user-list');
+```
+
+Os métodos `fragments` e `fragmentsIf` permitem que você retorne múltiplos fragmentos. Os fragmentos serão concatenados juntos:
+
+```php
+view('dashboard', ['users' => $users])
+    ->fragments(['user-list', 'comment-list']);
+ 
+view('dashboard', ['users' => $users])
+    ->fragmentsIf(
+        $request->hasHeader('HX-Request'),
+        ['user-list', 'comment-list']
+    );
+```
+
+## Extendendo o Blade
+
+O Blade permite que você defina suas próprias diretivas personalizadas utilizando o método `directive`. Quando o Compilador do Blade 
+encontra a diretiva personalizada, ele chamará o callback fornecido com a expressões definidas.
+
+O exemplo a seguir cria uma diretiva `@datetime($var)` que formata um `$var` fornecido, o mesmo deve ser uma instância de `DateTime`:
+
+```php
+<?php
+ 
+namespace App\Providers;
+ 
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
+ 
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        // ...
+    }
+ 
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        Blade::directive('datetime', function (string $expression) {
+            return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";
+        });
+    }
+}
+```
+
+Como você pode ver, encadearemos o método `format` em qualquer expressão passada para a diretiva. Portanto, neste exemplo, o PHP final
+gerado por esta diretiva será:
+
+```php
+<?php echo ($var)->format('m/d/Y H:i'); ?>
+```
+
+::: danger
+Após atualizar a lógica de uma diretiva Blade, você precisará excluir todas as views em cache. As views em cache podem ser removidas 
+utilizando o comando Artisan `view:clear`.
+:::
+
+### Mecanismos Personalizados para Exibição de Dados
+
+Se você tentar "exibir" um objeto utilizando o Blade, o método `__toString` do objeto será invocado. O método <a href="https://www.php.net/manual/en/language.oop5.magic.php#object.tostring" target="_blank">`__toString`</a> é 
+um dos "métodos mágicos" integrados do PHP. No entanto, às vezes você pode não ter controle sobre o método `__toString` de 
+uma determinada classe, como quando a classe com a qual você está interagindo pertence a uma biblioteca de terceiros.
+
+Nestes casos, o Blade permite que você registre uma forma personalizada para exibir esse tipo específico de objeto. Para
+fazer isso, você deve invocar o método `stringable` do Blade. O método `stringable` aceita uma closure. Esta closure deve
+conter o tipo de objeto que ela é responsável por renderizar. Como de costume, o método `stringable` deve ser utilizado dentro do
+método `boot` da classe `AppServiceProvider` da sua aplicação:
+
+```php
+use Illuminate\Support\Facades\Blade;
+use Money\Money;
+ 
+/**
+ * Bootstrap any application services.
+ */
+public function boot(): void
+{
+    Blade::stringable(function (Money $money) {
+        return $money->formatTo('en_GB');
+    });
+}
+```
+
+Uma vez que definou sua personalização de foi definida, você pode simplesmente exibir o objeto no seu Template Blade:
+
+```blade
+Custo: {{ $money }}
+```
+
+### Condicionais Personalizadas
+
+Programar uma diretiva personalizada pode ser mais complexo do que o necessário ao definir declarações condicionais personalizadas. 
+Por esse motivo, o Blade fornece um método `Blade::if` que permite que você defina rapidamente diretivas condicionais personalizadas
+utilizando closures. Por exemplo, vamos definir uma condição personalizada que verifica o "disco" padrão configurado para a aplicação. 
+Podemos fazer isso no método `boot` do `AppServiceProvider`:
+
+```php
+use Illuminate\Support\Facades\Blade;
+ 
+/**
+ * Bootstrap any application services.
+ */
+public function boot(): void
+{
+    Blade::if('disk', function (string $value) {
+        return config('filesystems.default') === $value;
+    });
+}
+```
+
+Uma vez que a condição personalizada foi definida, você pode utilizá-la nos seus templates:
+
+```blade
+@disk('local')
+    <!-- A aplicação está utilizando o disco local... -->
+@elsedisk('s3')
+    <!-- A aplicação está utilizando o disco s3... -->
+@else
+    <!-- A aplicação está utilizando algum outro disco... -->
+@enddisk
+ 
+@unlessdisk('local')
+    <!-- A aplicação não está utilizando o disco local... -->
+@enddisk
+```
